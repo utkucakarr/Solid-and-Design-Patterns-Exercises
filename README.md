@@ -1,51 +1,95 @@
-# Solid-and-Design-Patterns-Exercises
-Solid Prensipleri ve Design Patterns Öğrenme Aşamasındaki Çalışmalar
+🧱 SOLID #1 — Single Responsibility Principle (SRP)
+> *"Bir sınıfın değişmesi için yalnızca bir sebebi olmalıdır."*
+> — Robert C. Martin
+---
+📌 Prensip Nedir?
+Single Responsibility Principle, bir sınıfın yalnızca tek bir sorumluluğu olması gerektiğini söyler.
+Başka bir deyişle: bir sınıfı değiştirmen gerekiyorsa, bunun için yalnızca tek bir nedenin olması gerekir.
+Eğer bir sınıf hem veritabanına yazıyor, hem e-posta gönderiyor, hem de loglama yapıyorsa — bu sınıfın değişmesi için birden fazla sebep var demektir. Bu da beraberinde şu sorunları getirir:
+Bir özellik değiştiğinde alakasız kodlar da etkilenir
+Test yazmak zorlaşır
+Kod tekrarı artar
+Bağımlılıklar giderek büyür
+---
+❌ Kötü Kullanım — SRP İhlali
+`Order_Bad` sınıfı tek başına 4 farklı iş yapıyor:
+```csharp
+public class Order_Bad
+{
+    public decimal CalculateTotal() { ... }    // 1. Hesaplama
+    public void SaveToDatabase()    { ... }    // 2. Veritabanı
+    public void SendConfirmationEmail() { ... } // 3. E-posta
+    public void LogOrder()          { ... }    // 4. Loglama
+}
+```
+Neden sorunlu?
+Değişiklik Sebebi	Etkilenen Yer
+Veritabanı motoru değişirse	`Order_Bad` değişmeli
+E-posta servisi değişirse	`Order_Bad` değişmeli
+Log formatı değişirse	`Order_Bad` değişmeli
+Hesaplama mantığı değişirse	`Order_Bad` değişmeli
+Her değişiklik, birbirinden tamamen alakasız kodlara dokunmayı zorunlu kılar. Bu da hataya açık, test edilmesi zor bir yapı oluşturur.
+---
+✅ Doğru Kullanım — SRP Uyumlu Yapı
+Her sınıfa tek bir sorumluluk verildi:
+```
+Order              → Sadece sipariş verisi ve toplam hesaplama
+OrderRepository    → Sadece veritabanı işlemleri
+OrderNotificationService → Sadece e-posta gönderimi
+OrderLogger        → Sadece loglama
+OrderService       → Tüm adımları bir araya getiren orkestratör
+```
+```csharp
+// Her sınıf yalnızca kendi işini yapıyor
+public class OrderService
+{
+    public void ProcessOrder(Order order)
+    {
+        _repository.Save(order);                    // DB işi repository'de
+        _notificationService.SendConfirmation(order); // Mail işi serviste
+        _logger.LogOrderCreated(order);             // Log işi logger'da
+    }
+}
+```
+Artık ne değişirse ne olur?
+Değişiklik Sebebi	Etkilenen Yer
+Veritabanı motoru değişirse	Sadece `OrderRepository`
+E-posta servisi değişirse	Sadece `OrderNotificationService`
+Log formatı değişirse	Sadece `OrderLogger`
+Hesaplama mantığı değişirse	Sadece `Order` modeli
+Her değişiklik izole kalır. Diğer sınıflara dokunmana gerek olmaz.
+---
+🔌 Interface Kullanımı
+Servisler doğrudan sınıflara değil, interface'lere bağımlıdır:
+```csharp
+public class OrderService
+{
+    private readonly IOrderRepository _repository;
+    private readonly INotificationService _notificationService;
+    private readonly IOrderLogger _logger;
+}
+```
+Bu yaklaşımın faydaları:
+Test edilebilirlik — Mock nesnelerle gerçek bağımlılıklar simüle edilebilir
+Değiştirilebilirlik — `OrderRepository` yerine yarın `MongoOrderRepository` yazılabilir, `OrderService` hiç değişmez
+Bağımsızlık — Her katman birbirinden ayrı geliştirilebilir
+---
+🧪 Testler
+Testler xUnit, Moq ve FluentAssertions kütüphaneleriyle yazılmıştır.
+Kapsanan Senaryolar
+OrderTests — Model davranışı:
+Toplam tutarın doğru hesaplanması
+Boş sipariş kalemlerinde sıfır dönmesi
+Farklı fiyat ve miktar kombinasyonları `[Theory]`
+OrderServiceTests — Servis davranışı:
+Her bağımlılığın tam olarak bir kez çağrılması
+Çağrı sırası: `Save → SendConfirmation → LogOrderCreated`
+Repository hata verdiğinde e-posta ve log çağrılmaması
+OrderRepositoryTests — Repository davranışı:
+Kaydedilen siparişin ID ile bulunabilmesi
+Var olmayan ID ile `null` dönmesi
+Birden fazla siparişin ayrı ayrı kaydedilmesi
 
-SOLID & Design Patterns Exercises
-Bu depo (repository), yazılım geliştirmede sürdürülebilir, test edilebilir ve temiz kod (clean code) yazımı için kritik öneme sahip olan SOLID prensipleri ve Tasarım Kalıpları (Design Patterns) üzerine yaptığım çalışmaları içermektedir.
-
-Her bir prensip, gerçek dünya senaryolarına dayanan küçük projeler ve kapsamlı Unit Test çalışmalarıyla desteklenmiştir.
-
-Yol Haritası (Roadmap)
-[x] SRP - Single Responsibility Principle (Tamamlandı)
-
-[ ] OCP - Open-Closed Principle (Tamamlandı )
-
-[ ] LSP - Liskov Substitution Principle (Sıradaki)
-
-[ ] ISP - Interface Segregation Principle
-
-[ ] DIP - Dependency Inversion Principle
-
-[ ] Design Patterns (Planlanıyor)
-
-1. Single Responsibility Principle (SRP)
-Tanım: Bir sınıfın (veya metodun) değişmek için tek bir nedeni olmalıdır. Yani bir sınıf sadece tek bir işten sorumlu olmalıdır.
-
-Uygulama: Emlak Portalı (Real Estate)
-Bu çalışmada, bir emlak ilanının sisteme eklenme süreci SRP'ye uygun olarak parçalara ayrılmıştır:
-
-Property (Model): Sadece ilan verilerini taşır.
-
-PropertyValidator (Validation): İlanın iş kurallarına (fiyat > 0, başlık uzunluğu vb.) uygunluğunu denetler.
-
-PropertyRepository (Data Access): Verinin kalıcı hale getirilmesinden (dosya sistemine kayıt) sorumludur.
-
-ConsoleLogger (Logging): Sistemsel bilgilendirmeleri kullanıcıya sunar.
-
-PropertyManager (Orchestration): Yukarıdaki tüm birimleri bir araya getirerek iş akışını yönetir.
-
-Unit Test Süreci
-Kodun doğruluğunu kanıtlamak için xUnit ve Moq kütüphaneleri kullanılmıştır:
-
-Mantık Testleri: PropertyValidator için farklı veri senaryoları ([Theory]) test edildi.
-
-Davranış Testleri: PropertyManager test edilirken Moq ile bağımlılıklar taklit edildi. Validasyon hatalıysa kaydın asla yapılmadığı (Times.Never) doğrulandı.
-
-Gemini şunu dedi:
-Harika bir fikir! SRP için yaptığın o düzenli ve açıklayıcı yapıyı OCP için de devam ettirmen, reponun bütünlüğünü korur ve inceleyen kişiye "Bu arkadaş sadece kod yazmıyor, yazdığı mimariyi dokümante etmeyi de biliyor" dedirtir.
-
-İşte SRP formatına uygun olarak hazırladığım Open/Closed Principle (OCP) bölümü. Bunu README dosyanda SRP'nin hemen altına ekleyebilirsin:
 
 2. Open/Closed Principle (OCP)
 Tanım: Yazılım varlıkları (sınıflar, modüller, fonksiyonlar vb.) genişletilmeye açık (Open), ancak değişime kapalı (Closed) olmalıdır. Yani yeni bir özellik eklemek istediğimizde mevcut, çalışan koda dokunmak yerine sisteme yeni parçalar ekleyebilmeliyiz.
@@ -63,5 +107,18 @@ Unit Test Süreci
 Kodun esnekliğini ve doğruluğunu kanıtlamak için xUnit kütüphanesi kullanılmıştır:
 
 Strateji Testleri: Her bir indirim sınıfının (Standard, Premium, VIP) kendi matematiksel mantığı bağımsız olarak test edilmiştir.
+
+
+╔══════════════════════════════════════╗
+📚 SOLID Serisi
+Bu çalışma SOLID prensiplerini ele alan serinin bir parçasıdır:
+#	Prensip	Durum
+1	Single Responsibility Principle	✅ Bu repo
+2	Open/Closed Principle	✅ Bu repo
+3	Liskov Substitution Principle	🔜 Yakında
+4	Interface Segregation Principle	🔜 Yakında
+5	Dependency Inversion Principle	🔜 Yakında
+---
+
 
 Motor Testi: DiscountCalculator sınıfının, kendisine verilen herhangi bir stratejiyi doğru şekilde tetikleyip sonuç döndürdüğü [Theory] ve [InlineData] senaryoları ile doğrulanmıştır.
