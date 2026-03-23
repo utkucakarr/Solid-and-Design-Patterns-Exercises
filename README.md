@@ -595,10 +595,12 @@ DIP ve OCP birbirini tamamlar:
 > `NotificationManager` interface'e bağımlı olduğu için yeni bir kanal eklemek mevcut kodu değiştirmeyi gerektirmez — bu aynı zamanda OCP'dir. **DIP, OCP'yi mümkün kılar.**
 
 Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut sınıflara bağımlı olsaydı gerçek e-posta ve SMS servisleri olmadan test yazmak imkânsız olurdu. Interface'e bağımlı olduğu için `Moq` ile mock geçip izole test yazabildik.
----
+
 ---
 
-## SOLID Serisi
+---
+
+## 📚 SOLID Serisi
 
 | # | Prensip | Durum |
 |---|---|---|
@@ -606,9 +608,8 @@ Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut s
 | 2 | Open/Closed Principle | ✅ Tamamlandı |
 | 3 | Liskov Substitution Principle | ✅ Tamamlandı |
 | 4 | Interface Segregation Principle | ✅ Tamamlandı |
-| 5 | Dependency Inversion Principle | ✅ Tamamlandı |
+| 5 | Dependency Inversion Principle | ✅ Bu repo |
 
 ---
-
 
 
