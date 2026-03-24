@@ -6,10 +6,10 @@ Prensip Nedir?
 Single Responsibility Principle, bir sınıfın yalnızca tek bir sorumluluğu olması gerektiğini söyler.
 Başka bir deyişle: bir sınıfı değiştirmen gerekiyorsa, bunun için yalnızca tek bir nedenin olması gerekir.
 Eğer bir sınıf hem veritabanına yazıyor, hem e-posta gönderiyor, hem de loglama yapıyorsa — bu sınıfın değişmesi için birden fazla sebep var demektir. Bu da beraberinde şu sorunları getirir:
-Bir özellik değiştiğinde alakasız kodlar da etkilenir
-Test yazmak zorlaşır
-Kod tekrarı artar
-Bağımlılıklar giderek büyür
+Bir özellik değiştiğinde alakasız kodlar da etkilenir.
+Test yazmak zorlaşır.
+Kod tekrarı artar.
+Bağımlılıklar giderek büyür.
 ---
 Kötü Kullanım — SRP İhlali
 `Order_Bad` sınıfı tek başına 4 farklı iş yapıyor:
@@ -101,8 +101,8 @@ Birden fazla siparişin ayrı ayrı kaydedilmesi
 
 Open/Closed Principle, mevcut ve çalışan bir koda **dokunmadan** yeni davranışlar ekleyebilmemiz gerektiğini söyler.
 
-- **Açık (Open)** → Yeni özellikler eklenebilmeli
-- **Kapalı (Closed)** → Mevcut kod değiştirilmemeli
+- **Açık (Open)** → Yeni özellikler eklenebilmeli.
+- **Kapalı (Closed)** → Mevcut kod değiştirilmemeli.
 
 Bir sınıfa yeni bir özellik eklemek için içine girip mevcut kodu düzenlemek zorundaysak — o sınıf OCP'yi ihlal ediyor demektir. Her düzenleme, mevcut testleri bozma ve yeni hata ekleme riskini beraberinde getirir.
 
@@ -127,11 +127,11 @@ public decimal CalculateDiscount(decimal amount, CustomerType customerType)
 
 ### Yeni bir müşteri tipi (örn: Student) eklemek istesek ne olur?
 
-1. `CustomerType` enum'una `Student` eklenir
-2. `DiscountManager` sınıfının **içine girilir**
-3. Yeni bir `case` eklenir
-4. Tüm mevcut testler yeniden çalıştırılır
-5. Başka `switch-case` kullanan yerler de güncellenir
+1. `CustomerType` enum'una `Student` eklenir.
+2. `DiscountManager` sınıfının **içine girilir.**
+3. Yeni bir `case` eklenir.
+4. Tüm mevcut testler yeniden çalıştırılır.
+5. Başka `switch-case` kullanan yerler de güncellenir.
 
 Her yeni gereksinim, çalışan kodu değiştirmeyi zorunlu kılar. Bu da mevcut davranışları bozma riskini sürekli canlı tutar.
 
@@ -153,7 +153,7 @@ public class StandartDiscount : IDiscountStrategy
 {
     public decimal ApplyDiscount(decimal amount) => amount * 0.05m;
 }
-0
+
 public class PremiumDiscount : IDiscountStrategy
 {
     public decimal ApplyDiscount(decimal amount) => amount * 0.10m;
@@ -223,7 +223,7 @@ Testler **xUnit** ile yazılmıştır.
 
 Liskov Substitution Principle, bir alt sınıfın üst sınıfının **tüm sözleşmelerini eksiksiz yerine getirmesi** gerektiğini söyler.
 
-E�er bir alt sınıf, üst sınıfın bir metodunu `NotSupportedException` fırlatarak geçersiz kılıyorsa — bu LSP ihlalidir. Çünkü o sınıf, üst sınıfın yerine güvenle **geçemiyor** demektir.
+Eğer bir alt sınıf, üst sınıfın bir metodunu `NotSupportedException` fırlatarak geçersiz kılıyorsa — bu LSP ihlalidir. Çünkü o sınıf, üst sınıfın yerine güvenle **geçemiyor** demektir.
 
 **Test sorusu:** Üst sınıf referansını alt sınıfla değiştirdiğinde program hâlâ doğru çalışıyor mu?
 
@@ -385,11 +385,11 @@ var printers = new List<IPrinter_Bad>
 {
     new AllInOnePrinter_Bad(),
     new OfficePrinter_Bad(),
-    new BasicPrinter_Bad()    // 💥 gizli bomba
+    new BasicPrinter_Bad()
 };
 
 foreach (var printer in printers)
-    printer.Scan("Rapor.pdf"); // AllInOne ✅ Office ✅ Basic 💥 CRASH!
+    printer.Scan("Rapor.pdf");
 ```
 
 ---
@@ -464,8 +464,8 @@ Interface'leri küçük tutarak hem ISP'yi hem de LSP'yi aynı anda koruyabilirs
 
 Dependency Inversion Principle iki şeyi söyler:
 
-1. **Üst seviye modüller** (iş mantığı) alt seviye modüllere (veritabanı, e-posta, SMS) doğrudan bağımlı olmamalıdır
-2. **Her ikisi de soyutlamalara** (interface) bağımlı olmalıdır — detaylar soyutlamalara bağımlı olur, soyutlamalar detaylara değil
+1. **Üst seviye modüller** (iş mantığı) alt seviye modüllere (veritabanı, e-posta, SMS) doğrudan bağımlı olmamalıdır.
+2. **Her ikisi de soyutlamalara** (interface) bağımlı olmalıdır — detaylar soyutlamalara bağımlı olur, soyutlamalar detaylara değil.
 
 Bir sınıf kullandığı bağımlılıkları `new` ile doğrudan oluşturuyorsa — o sınıf DIP'i ihlal ediyor demektir. Bağımlılıklar dışarıdan, constructor üzerinden verilmelidir.
 
@@ -494,13 +494,11 @@ public class NotificationManager_Bad
 
 ### Yeni bir kanal (WhatsApp) eklemek istesek ne olur?
 
-1. `WhatsAppService_Bad` sınıfı oluşturulur
-2. `NotificationManager_Bad` içine **girilir**
-3. Yeni `private field` eklenir
-4. `SendAll()` metoduna yeni satır eklenir
-5. Çalışan koda dokunmak zorunda kalınır
-
-Ayrıca test yazarken gerçek e-posta ve SMS servisleri devreye girer — izole test yapmak imkânsızlaşır.
+1. `WhatsAppService_Bad` sınıfı oluşturulur.
+2. `NotificationManager_Bad` içine **girilir.**
+3. Yeni `private field` eklenir.
+4. `SendAll()` metoduna yeni satır eklenir.
+5. Çalışan koda dokunmak zorunda kalınır.
 
 ---
 
@@ -588,19 +586,7 @@ Testler **xUnit**, **Moq** ve **FluentAssertions** ile yazılmıştır.
 
 ---
 
-## 💡 OCP ile Bağlantısı
-
-DIP ve OCP birbirini tamamlar:
-
-> `NotificationManager` interface'e bağımlı olduğu için yeni bir kanal eklemek mevcut kodu değiştirmeyi gerektirmez — bu aynı zamanda OCP'dir. **DIP, OCP'yi mümkün kılar.**
-
-Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut sınıflara bağımlı olsaydı gerçek e-posta ve SMS servisleri olmadan test yazmak imkânsız olurdu. Interface'e bağımlı olduğu için `Moq` ile mock geçip izole test yazabildik.
-
----
-
----
-
-## 📚 SOLID Serisi
+## SOLID Serisi
 
 | # | Prensip | Durum |
 |---|---|---|
@@ -608,7 +594,7 @@ Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut s
 | 2 | Open/Closed Principle | ✅ Tamamlandı |
 | 3 | Liskov Substitution Principle | ✅ Tamamlandı |
 | 4 | Interface Segregation Principle | ✅ Tamamlandı |
-| 5 | Dependency Inversion Principle | ✅ Bu repo |
+| 5 | Dependency Inversion Principle | ✅ Tamamlandı |
 
 ---
 
