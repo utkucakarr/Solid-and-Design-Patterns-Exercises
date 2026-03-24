@@ -24,10 +24,10 @@ public class Order_Bad
 ```
 Neden sorunlu?
 Değişiklik Sebebi	Etkilenen Yer
-Veritabanı motoru değişirse	`Order_Bad` değişmeli
-E-posta servisi değişirse	`Order_Bad` değişmeli
-Log formatı değişirse	`Order_Bad` değişmeli
-Hesaplama mantığı değişirse	`Order_Bad` değişmeli
+Veritabanı motoru değişirse	`Order_Bad` değişmeli.
+E-posta servisi değişirse	`Order_Bad` değişmeli.
+Log formatı değişirse	`Order_Bad` değişmeli.
+Hesaplama mantığı değişirse	`Order_Bad` değişmeli.
 Her değişiklik, birbirinden tamamen alakasız kodlara dokunmayı zorunlu kılar. Bu da hataya açık, test edilmesi zor bir yapı oluşturur.
 ---
 ✅Doğru Kullanım — SRP Uyumlu Yapı
@@ -53,10 +53,10 @@ public class OrderService
 ```
 Artık ne değişirse ne olur?
 Değişiklik Sebebi	Etkilenen Yer
-Veritabanı motoru değişirse	Sadece `OrderRepository`
-E-posta servisi değişirse	Sadece `OrderNotificationService`
-Log formatı değişirse	Sadece `OrderLogger`
-Hesaplama mantığı değişirse	Sadece `Order` modeli
+Veritabanı motoru değişirse	Sadece `OrderRepository`.
+E-posta servisi değişirse	Sadece `OrderNotificationService`.
+Log formatı değişirse	Sadece `OrderLogger`.
+Hesaplama mantığı değişirse	Sadece `Order` modeli.
 Her değişiklik izole kalır. Diğer sınıflara dokunmana gerek olmaz.
 ---
 🔌 Interface Kullanımı
