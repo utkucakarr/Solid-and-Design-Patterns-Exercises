@@ -70,25 +70,25 @@ public class OrderService
 }
 ```
 Bu yaklaşımın faydaları:
-Test edilebilirlik — Mock nesnelerle gerçek bağımlılıklar simüle edilebilir
-Değiştirilebilirlik — `OrderRepository` yerine yarın `MongoOrderRepository` yazılabilir, `OrderService` hiç değişmez
-Bağımsızlık — Her katman birbirinden ayrı geliştirilebilir
+Test edilebilirlik — Mock nesnelerle gerçek bağımlılıklar simüle edilebilir.
+Değiştirilebilirlik — `OrderRepository` yerine yarın `MongoOrderRepository` yazılabilir `OrderService` hiç değişmez.
+Bağımsızlık — Her katman birbirinden ayrı geliştirilebilir.
 ---
 Testler
 Testler xUnit, Moq ve FluentAssertions kütüphaneleriyle yazılmıştır.
 Kapsanan Senaryolar
 OrderTests — Model davranışı:
-Toplam tutarın doğru hesaplanması
-Boş sipariş kalemlerinde sıfır dönmesi
-Farklı fiyat ve miktar kombinasyonları `[Theory]`
+Toplam tutarın doğru hesaplanması.
+Boş sipariş kalemlerinde sıfır dönmesi.
+Farklı fiyat ve miktar kombinasyonları `[Theory]`.
 OrderServiceTests — Servis davranışı:
-Her bağımlılığın tam olarak bir kez çağrılması
+Her bağımlılığın tam olarak bir kez çağrılması.
 Çağrı sırası: `Save → SendConfirmation → LogOrderCreated`
-Repository hata verdiğinde e-posta ve log çağrılmaması
+Repository hata verdiğinde e-posta ve log çağrılmaması.
 OrderRepositoryTests — Repository davranışı:
-Kaydedilen siparişin ID ile bulunabilmesi
-Var olmayan ID ile `null` dönmesi
-Birden fazla siparişin ayrı ayrı kaydedilmesi
+Kaydedilen siparişin ID ile bulunabilmesi.
+Var olmayan ID ile `null` dönmesi.
+Birden fazla siparişin ayrı ayrı kaydedilmesi.
 
 # 🔓 SOLID #2 — Open/Closed Principle (OCP)
 
@@ -317,20 +317,20 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **FullTimeEmployeeTests:**
-- Maaş, prim ve fazla mesai doğru hesaplanıyor
-- `IEmployee`, `IBonusEligible`, `IOvertimeEligible` atanabilir
-- Guard clause — boş isim ve negatif maaş engelleniyor
+- Maaş, prim ve fazla mesai doğru hesaplanıyor.
+- `IEmployee`, `IBonusEligible`, `IOvertimeEligible` atanabilir.
+- Guard clause — boş isim ve negatif maaş engelleniyor.
 
 **InternTests:**
-- Maaş doğru hesaplanıyor
-- `IEmployee` atanabilir
-- `IBonusEligible` ve `IOvertimeEligible` **atanamıyor** — LSP garantisi
-- `IEmployee` referansıyla kullanıldığında exception yok
+- Maaş doğru hesaplanıyor.
+- `IEmployee` atanabilir.
+- `IBonusEligible` ve `IOvertimeEligible` **atanamıyor** — LSP garantisi.
+- `IEmployee` referansıyla kullanıldığında exception yok.
 
 **ContractorTests:**
-- Maaş ve prim doğru hesaplanıyor
-- `IEmployee` ve `IBonusEligible` atanabilir
-- `IOvertimeEligible` **atanamıyor** — LSP garantisi
+- Maaş ve prim doğru hesaplanıyor.
+- `IEmployee` ve `IBonusEligible` atanabilir.
+- `IOvertimeEligible` **atanamıyor** — LSP garantisi.
 
 # 🔌 SOLID #4 — Interface Segregation Principle (ISP)
 
@@ -430,17 +430,17 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **BasicPrinterTests:**
-- Yazdırma işlemi başarılı sonuç döndürüyor
-- Boş belge adıyla `ArgumentException` fırlatılıyor
-- `IPrintable` atanabilir, `IScannable` ve `IFaxable` **atanamıyor**
+- Yazdırma işlemi başarılı sonuç döndürüyor.
+- Boş belge adıyla `ArgumentException` fırlatılıyor.
+- `IPrintable` atanabilir, `IScannable` ve `IFaxable` **atanamıyor.**
 
 **OfficePrinterTests:**
-- Yazdırma ve tarama işlemleri başarılı sonuç döndürüyor
-- `IPrintable` ve `IScannable` atanabilir, `IFaxable` **atanamıyor**
+- Yazdırma ve tarama işlemleri başarılı sonuç döndürüyor.
+- `IPrintable` ve `IScannable` atanabilir, `IFaxable` **atanamıyor.**
 
 **AllInOnePrinterTests:**
-- Yazdırma, tarama ve faks işlemleri başarılı sonuç döndürüyor
-- `IPrintable`, `IScannable` ve `IFaxable` hepsi atanabilir
+- Yazdırma, tarama ve faks işlemleri başarılı sonuç döndürüyor.
+- `IPrintable`, `IScannable` ve `IFaxable` hepsi atanabilir.
 
 ---
 
@@ -573,14 +573,14 @@ Testler **xUnit**, **Moq** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **NotificationManagerTests:**
-- `null` servis listesiyle `ArgumentNullException` fırlatılıyor
-- `SendAll` tüm servisleri tam olarak bir kez çağırıyor
-- `SendAll` tüm sonuçları başarılı döndürüyor
-- Boş mesajda `ArgumentException` fırlatılıyor
-- `SendToChannel` sadece ilgili servisi çağırıyor
-- Bilinmeyen kanal için `Fail` sonucu dönüyor
-- **DIP garantisi:** Herhangi bir `INotificationService` implementasyonuyla çalışıyor
-- **DIP garantisi:** Farklı sayıda servisle `NotificationManager` değişmiyor
+- `null` servis listesiyle `ArgumentNullException` fırlatılıyor.
+- `SendAll` tüm servisleri tam olarak bir kez çağırıyor.
+- `SendAll` tüm sonuçları başarılı döndürüyor.
+- Boş mesajda `ArgumentException` fırlatılıyor.
+- `SendToChannel` sadece ilgili servisi çağırıyor.
+- Bilinmeyen kanal için `Fail` sonucu dönüyor.
+- **DIP garantisi:** Herhangi bir `INotificationService` implementasyonuyla çalışıyor.
+- **DIP garantisi:** Farklı sayıda servisle `NotificationManager` değişmiyor.
 
 ```
 
