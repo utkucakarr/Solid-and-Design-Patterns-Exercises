@@ -6,10 +6,10 @@ Prensip Nedir?
 Single Responsibility Principle, bir sınıfın yalnızca tek bir sorumluluğu olması gerektiğini söyler.
 Başka bir deyişle: bir sınıfı değiştirmen gerekiyorsa, bunun için yalnızca tek bir nedenin olması gerekir.
 Eğer bir sınıf hem veritabanına yazıyor, hem e-posta gönderiyor, hem de loglama yapıyorsa — bu sınıfın değişmesi için birden fazla sebep var demektir. Bu da beraberinde şu sorunları getirir:
-Bir özellik değiştiğinde alakasız kodlar da etkilenir
-Test yazmak zorlaşır
-Kod tekrarı artar
-Bağımlılıklar giderek büyür
+Bir özellik değiştiğinde alakasız kodlar da etkilenir.
+Test yazmak zorlaşır.
+Kod tekrarı artar.
+Bağımlılıklar giderek büyür.
 ---
 Kötü Kullanım — SRP İhlali
 `Order_Bad` sınıfı tek başına 4 farklı iş yapıyor:
@@ -24,10 +24,10 @@ public class Order_Bad
 ```
 Neden sorunlu?
 Değişiklik Sebebi	Etkilenen Yer
-Veritabanı motoru değişirse	`Order_Bad` değişmeli
-E-posta servisi değişirse	`Order_Bad` değişmeli
-Log formatı değişirse	`Order_Bad` değişmeli
-Hesaplama mantığı değişirse	`Order_Bad` değişmeli
+Veritabanı motoru değişirse	`Order_Bad` değişmeli.
+E-posta servisi değişirse	`Order_Bad` değişmeli.
+Log formatı değişirse	`Order_Bad` değişmeli.
+Hesaplama mantığı değişirse	`Order_Bad` değişmeli.
 Her değişiklik, birbirinden tamamen alakasız kodlara dokunmayı zorunlu kılar. Bu da hataya açık, test edilmesi zor bir yapı oluşturur.
 ---
 ✅Doğru Kullanım — SRP Uyumlu Yapı
@@ -53,10 +53,10 @@ public class OrderService
 ```
 Artık ne değişirse ne olur?
 Değişiklik Sebebi	Etkilenen Yer
-Veritabanı motoru değişirse	Sadece `OrderRepository`
-E-posta servisi değişirse	Sadece `OrderNotificationService`
-Log formatı değişirse	Sadece `OrderLogger`
-Hesaplama mantığı değişirse	Sadece `Order` modeli
+Veritabanı motoru değişirse	Sadece `OrderRepository`.
+E-posta servisi değişirse	Sadece `OrderNotificationService`.
+Log formatı değişirse	Sadece `OrderLogger`.
+Hesaplama mantığı değişirse	Sadece `Order` modeli.
 Her değişiklik izole kalır. Diğer sınıflara dokunmana gerek olmaz.
 ---
 🔌 Interface Kullanımı
@@ -70,25 +70,25 @@ public class OrderService
 }
 ```
 Bu yaklaşımın faydaları:
-Test edilebilirlik — Mock nesnelerle gerçek bağımlılıklar simüle edilebilir
-Değiştirilebilirlik — `OrderRepository` yerine yarın `MongoOrderRepository` yazılabilir, `OrderService` hiç değişmez
-Bağımsızlık — Her katman birbirinden ayrı geliştirilebilir
+Test edilebilirlik — Mock nesnelerle gerçek bağımlılıklar simüle edilebilir.
+Değiştirilebilirlik — `OrderRepository` yerine yarın `MongoOrderRepository` yazılabilir `OrderService` hiç değişmez.
+Bağımsızlık — Her katman birbirinden ayrı geliştirilebilir.
 ---
 Testler
 Testler xUnit, Moq ve FluentAssertions kütüphaneleriyle yazılmıştır.
 Kapsanan Senaryolar
 OrderTests — Model davranışı:
-Toplam tutarın doğru hesaplanması
-Boş sipariş kalemlerinde sıfır dönmesi
-Farklı fiyat ve miktar kombinasyonları `[Theory]`
+Toplam tutarın doğru hesaplanması.
+Boş sipariş kalemlerinde sıfır dönmesi.
+Farklı fiyat ve miktar kombinasyonları `[Theory]`.
 OrderServiceTests — Servis davranışı:
-Her bağımlılığın tam olarak bir kez çağrılması
+Her bağımlılığın tam olarak bir kez çağrılması.
 Çağrı sırası: `Save → SendConfirmation → LogOrderCreated`
-Repository hata verdiğinde e-posta ve log çağrılmaması
+Repository hata verdiğinde e-posta ve log çağrılmaması.
 OrderRepositoryTests — Repository davranışı:
-Kaydedilen siparişin ID ile bulunabilmesi
-Var olmayan ID ile `null` dönmesi
-Birden fazla siparişin ayrı ayrı kaydedilmesi
+Kaydedilen siparişin ID ile bulunabilmesi.
+Var olmayan ID ile `null` dönmesi.
+Birden fazla siparişin ayrı ayrı kaydedilmesi.
 
 # 🔓 SOLID #2 — Open/Closed Principle (OCP)
 
@@ -101,8 +101,8 @@ Birden fazla siparişin ayrı ayrı kaydedilmesi
 
 Open/Closed Principle, mevcut ve çalışan bir koda **dokunmadan** yeni davranışlar ekleyebilmemiz gerektiğini söyler.
 
-- **Açık (Open)** → Yeni özellikler eklenebilmeli
-- **Kapalı (Closed)** → Mevcut kod değiştirilmemeli
+- **Açık (Open)** → Yeni özellikler eklenebilmeli.
+- **Kapalı (Closed)** → Mevcut kod değiştirilmemeli.
 
 Bir sınıfa yeni bir özellik eklemek için içine girip mevcut kodu düzenlemek zorundaysak — o sınıf OCP'yi ihlal ediyor demektir. Her düzenleme, mevcut testleri bozma ve yeni hata ekleme riskini beraberinde getirir.
 
@@ -127,11 +127,11 @@ public decimal CalculateDiscount(decimal amount, CustomerType customerType)
 
 ### Yeni bir müşteri tipi (örn: Student) eklemek istesek ne olur?
 
-1. `CustomerType` enum'una `Student` eklenir
-2. `DiscountManager` sınıfının **içine girilir**
-3. Yeni bir `case` eklenir
-4. Tüm mevcut testler yeniden çalıştırılır
-5. Başka `switch-case` kullanan yerler de güncellenir
+1. `CustomerType` enum'una `Student` eklenir.
+2. `DiscountManager` sınıfının **içine girilir.**
+3. Yeni bir `case` eklenir.
+4. Tüm mevcut testler yeniden çalıştırılır.
+5. Başka `switch-case` kullanan yerler de güncellenir.
 
 Her yeni gereksinim, çalışan kodu değiştirmeyi zorunlu kılar. Bu da mevcut davranışları bozma riskini sürekli canlı tutar.
 
@@ -153,7 +153,7 @@ public class StandartDiscount : IDiscountStrategy
 {
     public decimal ApplyDiscount(decimal amount) => amount * 0.05m;
 }
-0
+
 public class PremiumDiscount : IDiscountStrategy
 {
     public decimal ApplyDiscount(decimal amount) => amount * 0.10m;
@@ -223,7 +223,7 @@ Testler **xUnit** ile yazılmıştır.
 
 Liskov Substitution Principle, bir alt sınıfın üst sınıfının **tüm sözleşmelerini eksiksiz yerine getirmesi** gerektiğini söyler.
 
-E�er bir alt sınıf, üst sınıfın bir metodunu `NotSupportedException` fırlatarak geçersiz kılıyorsa — bu LSP ihlalidir. Çünkü o sınıf, üst sınıfın yerine güvenle **geçemiyor** demektir.
+Eğer bir alt sınıf, üst sınıfın bir metodunu `NotSupportedException` fırlatarak geçersiz kılıyorsa — bu LSP ihlalidir. Çünkü o sınıf, üst sınıfın yerine güvenle **geçemiyor** demektir.
 
 **Test sorusu:** Üst sınıf referansını alt sınıfla değiştirdiğinde program hâlâ doğru çalışıyor mu?
 
@@ -317,20 +317,20 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **FullTimeEmployeeTests:**
-- Maaş, prim ve fazla mesai doğru hesaplanıyor
-- `IEmployee`, `IBonusEligible`, `IOvertimeEligible` atanabilir
-- Guard clause — boş isim ve negatif maaş engelleniyor
+- Maaş, prim ve fazla mesai doğru hesaplanıyor.
+- `IEmployee`, `IBonusEligible`, `IOvertimeEligible` atanabilir.
+- Guard clause — boş isim ve negatif maaş engelleniyor.
 
 **InternTests:**
-- Maaş doğru hesaplanıyor
-- `IEmployee` atanabilir
-- `IBonusEligible` ve `IOvertimeEligible` **atanamıyor** — LSP garantisi
-- `IEmployee` referansıyla kullanıldığında exception yok
+- Maaş doğru hesaplanıyor.
+- `IEmployee` atanabilir.
+- `IBonusEligible` ve `IOvertimeEligible` **atanamıyor** — LSP garantisi.
+- `IEmployee` referansıyla kullanıldığında exception yok.
 
 **ContractorTests:**
-- Maaş ve prim doğru hesaplanıyor
-- `IEmployee` ve `IBonusEligible` atanabilir
-- `IOvertimeEligible` **atanamıyor** — LSP garantisi
+- Maaş ve prim doğru hesaplanıyor.
+- `IEmployee` ve `IBonusEligible` atanabilir.
+- `IOvertimeEligible` **atanamıyor** — LSP garantisi.
 
 # 🔌 SOLID #4 — Interface Segregation Principle (ISP)
 
@@ -385,11 +385,11 @@ var printers = new List<IPrinter_Bad>
 {
     new AllInOnePrinter_Bad(),
     new OfficePrinter_Bad(),
-    new BasicPrinter_Bad()    // 💥 gizli bomba
+    new BasicPrinter_Bad()
 };
 
 foreach (var printer in printers)
-    printer.Scan("Rapor.pdf"); // AllInOne ✅ Office ✅ Basic 💥 CRASH!
+    printer.Scan("Rapor.pdf");
 ```
 
 ---
@@ -430,17 +430,17 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **BasicPrinterTests:**
-- Yazdırma işlemi başarılı sonuç döndürüyor
-- Boş belge adıyla `ArgumentException` fırlatılıyor
-- `IPrintable` atanabilir, `IScannable` ve `IFaxable` **atanamıyor**
+- Yazdırma işlemi başarılı sonuç döndürüyor.
+- Boş belge adıyla `ArgumentException` fırlatılıyor.
+- `IPrintable` atanabilir, `IScannable` ve `IFaxable` **atanamıyor.**
 
 **OfficePrinterTests:**
-- Yazdırma ve tarama işlemleri başarılı sonuç döndürüyor
-- `IPrintable` ve `IScannable` atanabilir, `IFaxable` **atanamıyor**
+- Yazdırma ve tarama işlemleri başarılı sonuç döndürüyor.
+- `IPrintable` ve `IScannable` atanabilir, `IFaxable` **atanamıyor.**
 
 **AllInOnePrinterTests:**
-- Yazdırma, tarama ve faks işlemleri başarılı sonuç döndürüyor
-- `IPrintable`, `IScannable` ve `IFaxable` hepsi atanabilir
+- Yazdırma, tarama ve faks işlemleri başarılı sonuç döndürüyor.
+- `IPrintable`, `IScannable` ve `IFaxable` hepsi atanabilir.
 
 ---
 
@@ -464,8 +464,8 @@ Interface'leri küçük tutarak hem ISP'yi hem de LSP'yi aynı anda koruyabilirs
 
 Dependency Inversion Principle iki şeyi söyler:
 
-1. **Üst seviye modüller** (iş mantığı) alt seviye modüllere (veritabanı, e-posta, SMS) doğrudan bağımlı olmamalıdır
-2. **Her ikisi de soyutlamalara** (interface) bağımlı olmalıdır — detaylar soyutlamalara bağımlı olur, soyutlamalar detaylara değil
+1. **Üst seviye modüller** (iş mantığı) alt seviye modüllere (veritabanı, e-posta, SMS) doğrudan bağımlı olmamalıdır.
+2. **Her ikisi de soyutlamalara** (interface) bağımlı olmalıdır — detaylar soyutlamalara bağımlı olur, soyutlamalar detaylara değil.
 
 Bir sınıf kullandığı bağımlılıkları `new` ile doğrudan oluşturuyorsa — o sınıf DIP'i ihlal ediyor demektir. Bağımlılıklar dışarıdan, constructor üzerinden verilmelidir.
 
@@ -494,13 +494,11 @@ public class NotificationManager_Bad
 
 ### Yeni bir kanal (WhatsApp) eklemek istesek ne olur?
 
-1. `WhatsAppService_Bad` sınıfı oluşturulur
-2. `NotificationManager_Bad` içine **girilir**
-3. Yeni `private field` eklenir
-4. `SendAll()` metoduna yeni satır eklenir
-5. Çalışan koda dokunmak zorunda kalınır
-
-Ayrıca test yazarken gerçek e-posta ve SMS servisleri devreye girer — izole test yapmak imkânsızlaşır.
+1. `WhatsAppService_Bad` sınıfı oluşturulur.
+2. `NotificationManager_Bad` içine **girilir.**
+3. Yeni `private field` eklenir.
+4. `SendAll()` metoduna yeni satır eklenir.
+5. Çalışan koda dokunmak zorunda kalınır.
 
 ---
 
@@ -575,32 +573,20 @@ Testler **xUnit**, **Moq** ve **FluentAssertions** ile yazılmıştır.
 ### Kapsanan Senaryolar
 
 **NotificationManagerTests:**
-- `null` servis listesiyle `ArgumentNullException` fırlatılıyor
-- `SendAll` tüm servisleri tam olarak bir kez çağırıyor
-- `SendAll` tüm sonuçları başarılı döndürüyor
-- Boş mesajda `ArgumentException` fırlatılıyor
-- `SendToChannel` sadece ilgili servisi çağırıyor
-- Bilinmeyen kanal için `Fail` sonucu dönüyor
-- **DIP garantisi:** Herhangi bir `INotificationService` implementasyonuyla çalışıyor
-- **DIP garantisi:** Farklı sayıda servisle `NotificationManager` değişmiyor
+- `null` servis listesiyle `ArgumentNullException` fırlatılıyor.
+- `SendAll` tüm servisleri tam olarak bir kez çağırıyor.
+- `SendAll` tüm sonuçları başarılı döndürüyor.
+- Boş mesajda `ArgumentException` fırlatılıyor.
+- `SendToChannel` sadece ilgili servisi çağırıyor.
+- Bilinmeyen kanal için `Fail` sonucu dönüyor.
+- **DIP garantisi:** Herhangi bir `INotificationService` implementasyonuyla çalışıyor.
+- **DIP garantisi:** Farklı sayıda servisle `NotificationManager` değişmiyor.
 
 ```
 
 ---
 
-## 💡 OCP ile Bağlantısı
-
-DIP ve OCP birbirini tamamlar:
-
-> `NotificationManager` interface'e bağımlı olduğu için yeni bir kanal eklemek mevcut kodu değiştirmeyi gerektirmez — bu aynı zamanda OCP'dir. **DIP, OCP'yi mümkün kılar.**
-
-Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut sınıflara bağımlı olsaydı gerçek e-posta ve SMS servisleri olmadan test yazmak imkânsız olurdu. Interface'e bağımlı olduğu için `Moq` ile mock geçip izole test yazabildik.
-
----
-
----
-
-## 📚 SOLID Serisi
+## SOLID Serisi
 
 | # | Prensip | Durum |
 |---|---|---|
@@ -608,7 +594,7 @@ Ayrıca DIP, unit test yazmayı doğrudan etkiler. `NotificationManager` somut s
 | 2 | Open/Closed Principle | ✅ Tamamlandı |
 | 3 | Liskov Substitution Principle | ✅ Tamamlandı |
 | 4 | Interface Segregation Principle | ✅ Tamamlandı |
-| 5 | Dependency Inversion Principle | ✅ Bu repo |
+| 5 | Dependency Inversion Principle | ✅ Tamamlandı |
 
 ---
 
