@@ -11,7 +11,7 @@ namespace Flyweight_Tests
 
         private readonly Forest _sut = new();
 
-        // ─── PlantTree Testleri ──────────────────────────────
+        // --- PlantTree Testleri ---
 
         [Fact]
         public void PlantTree_ShouldIncreaseTreeCount()
