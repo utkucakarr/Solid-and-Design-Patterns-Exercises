@@ -7,11 +7,11 @@
 
         public override decimal CalculateSalary() => BaseSalary;
 
-        // 💥 LSP İHLALİ — Stajyer prim alamaz!
+        // LSP İHLALİ — Stajyer prim alamaz!
         public override decimal CalculateBonus()
             => throw new NotSupportedException("Stajyerler prim alamaz!");
 
-        // 💥 LSP İHLALİ — Stajyer fazla mesai alamaz!
+        // LSP İHLALİ — Stajyer fazla mesai alamaz!
         public override decimal CalculateOvertime()
             => throw new NotSupportedException("Stajyerler fazla mesai alamaz!");
     }

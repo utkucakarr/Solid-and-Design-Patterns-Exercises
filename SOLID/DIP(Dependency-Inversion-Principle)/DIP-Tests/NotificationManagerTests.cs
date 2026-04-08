@@ -8,7 +8,7 @@ namespace DIP_Tests
 {
     public class NotificationManagerTests
     {
-        // ─── Constructor Testleri ───────────────────────────────
+        // --- Constructor Testleri ---
 
         [Fact]
         public void Constructor_WithNullServices_ShouldThrowArgumentNullException()
@@ -19,7 +19,7 @@ namespace DIP_Tests
                .WithParameterName("services");
         }
 
-        // ─── SendAll Testleri ───────────────────────────────────
+        // --- SendAll Testleri ---
 
         [Fact]
         public void SendAll_ShouldCallSend_OnAllServices()
@@ -83,7 +83,7 @@ namespace DIP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── SendToChannel Testleri ─────────────────────────────
+        // --- SendToChannel Testleri ---
 
         [Fact]
         public void SendToChannel_ShouldCallCorrectService()
@@ -133,12 +133,12 @@ namespace DIP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── DIP Garantisi ──────────────────────────────────────
+        // --- DIP Garantisi ---
 
         [Fact]
         public void NotificationManager_ShouldWork_WithAnyINotificationService()
         {
-            // ✅ DIP: NotificationManager hangi implementasyon gelirse gelsin çalışmalı
+            // DIP: NotificationManager hangi implementasyon gelirse gelsin çalışmalı
             var mockService = new Mock<INotificationService>();
 
             mockService.Setup(s => s.Channel).Returns("CUSTOM");
@@ -156,7 +156,7 @@ namespace DIP_Tests
         [Fact]
         public void NotificationManager_ShouldWork_WithDifferentNumberOfServices()
         {
-            // ✅ DIP: 1 servis de 10 servis de — NotificationManager değişmez
+            // DIP: 1 servis de 10 servis de — NotificationManager değişmez
             var services = Enumerable.Range(1, 5)
                 .Select(i =>
                 {

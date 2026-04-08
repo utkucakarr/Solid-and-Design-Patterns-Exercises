@@ -5,7 +5,7 @@ Console.WriteLine("╔═══════════════════�
 Console.WriteLine("║    SİNGLETON İHLALİ — CANLI DEMO     ║");
 Console.WriteLine("╚══════════════════════════════════════╝\n");
 
-Console.WriteLine("─── Her Servis Kendi Logger'ını Oluşturuyor ───\n");
+Console.WriteLine("--- Her Servis Kendi Logger'ını Oluşturuyor ---\n");
 
 var badOrderService = new OrderService();
 var badUserService = new UserService();
@@ -32,7 +32,7 @@ var orderService = new Singleton_Implementation.Services.OrderService(logger);
 var userService = new Singleton_Implementation.Services.UserService(logger);
 var paymentService = new Singleton_Implementation.Services.PaymentService(logger);
 
-Console.WriteLine("─── Tüm Servisler Aynı Logger'ı Kullanıyor ───\n");
+Console.WriteLine("--- Tüm Servisler Aynı Logger'ı Kullanıyor ---\n");
 
 userService.RegisterUser("Utku");
 orderService.CreateOrder("Laptop", 25000);
@@ -55,7 +55,7 @@ Console.WriteLine(logger.InstanceId == logger2.InstanceId
     ? "  Hepsi aynı instance! Singleton çalışıyor."
     : "  Farklı instance'lar!");
 
-Console.WriteLine("\n─── SONUÇ ───");
+Console.WriteLine("\n--- SONUÇ ---");
 Console.WriteLine("  Bad  -> Her servis ayrı Logger -> dosya çakışması riski");
 Console.WriteLine("  Good -> Tek Logger -> thread-safe, tutarlı, sıralı loglar");
 Console.WriteLine($"\n  Log dosyası: Logs/app-{DateTime.Now:yyyy-MM-dd}.log\n");

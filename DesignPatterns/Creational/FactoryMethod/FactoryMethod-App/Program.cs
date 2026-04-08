@@ -8,7 +8,7 @@ Console.WriteLine("╚═══════════════════�
 
 var badService = new NotificationServiceBad();
 
-Console.WriteLine("─── Bildirimler Gönderiliyor ───\n");
+Console.WriteLine("--- Bildirimler Gönderiliyor ---\n");
 badService.Send("email", "utku@example.com", "Siparişiniz kargoya verildi.");
 badService.Send("sms", "+905001234567", "Kargo takip: 123456");
 badService.Send("push", "device-token-abc", "Yeni mesajınız var.");
@@ -44,7 +44,7 @@ var messages = new[]
     "Yeni mesajınız var."
 };
 
-Console.WriteLine("─── Bildirimler Gönderiliyor (Güvenli) ───\n");
+Console.WriteLine("--- Bildirimler Gönderiliyor (Güvenli) ---\n");
 
 for (int i = 0; i < factories.Count; i++)
 {
@@ -62,6 +62,6 @@ Console.WriteLine(" -> WhatsAppNotification sınıfı oluşturulur");
 Console.WriteLine(" -> WhatsAppNotificationFactory sınıfı oluşturulur");
 Console.WriteLine(" -> NotificationService'e hiç dokunulmaz!\n");
 
-Console.WriteLine("─── SONUÇ ───");
+Console.WriteLine("--- SONUÇ ---");
 Console.WriteLine("  Bad  -> if-else zinciri — yeni kanal = mevcut koda dokun");
 Console.WriteLine("  Good -> Factory — yeni kanal = sadece yeni sınıf ekle\n");

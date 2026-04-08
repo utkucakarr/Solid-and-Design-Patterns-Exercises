@@ -2,7 +2,6 @@
 using AbstractFactory_Implementetion.DarkTheme;
 using AbstractFactory_Implementetion.LightTheme;
 using AbstractFactory_Violation;
-using static System.Net.Mime.MediaTypeNames;
 
 Console.WriteLine("╔══════════════════════════════════════════╗");
 Console.WriteLine("║  ABSTRACT FACTORY İHLALİ — CANLI DEMO    ║");
@@ -10,11 +9,11 @@ Console.WriteLine("╚═══════════════════�
 
 var badScreen = new UIScreenBad();
 
-Console.WriteLine("─── Tutarlı UI (Şans eseri) ───\n");
+Console.WriteLine("--- Tutarlı UI (Şans eseri) ---\n");
 badScreen.Render("light", "light", "light");
 
 Console.WriteLine();
-Console.WriteLine("─── Tutarsız UI (Karışık tema) ───\n");
+Console.WriteLine("--- Tutarsız UI (Karışık tema) ---\n");
 
 // Hiçbir şey bunu engelleyemiyor!
 badScreen.Render("light", "dark", "light");
@@ -47,6 +46,6 @@ Console.WriteLine("  -> HighContrastButton, HighContrastTextBox, HighContrastChe
 Console.WriteLine("  -> HighContrastUIFactory sınıfları oluşturulur");
 Console.WriteLine("  -> UIApplication'a hiç dokunulmaz!\n");
 
-Console.WriteLine("─── SONUÇ ───");
+Console.WriteLine("--- SONUÇ ---");
 Console.WriteLine("  Bad  -> Temalar karıştırılabilir — tutarsız UI riski");
 Console.WriteLine("  Good -> Factory uyumlu aile garantisi — tutarlı UI\n");

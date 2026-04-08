@@ -8,7 +8,7 @@ namespace LSP_Tests
     {
         private readonly Contractor _contractor = new("Ayşe", 20000);
 
-        // ─── IEmployee ──────────────────────────────────────
+        // --- IEmployee ---
 
         [Fact]
         public void CalculateSalary_ShouldReturnBaseSalary()
@@ -16,7 +16,7 @@ namespace LSP_Tests
             _contractor.CalculateSalary().Should().Be(20000);
         }
 
-        // ─── IBonusEligible ─────────────────────────────────
+        // --- IBonusEligible ---
 
         [Fact]
         public void CalculateBonus_ShouldReturnTenPercent()
@@ -24,7 +24,7 @@ namespace LSP_Tests
             _contractor.CalculateBonus().Should().Be(2000); // 20000 * 0.10
         }
 
-        // ─── LSP Garantisi ──────────────────────────────────
+        // --- LSP Garantisi ---
 
         [Fact]
         public void Contractor_ShouldBeAssignableTo_IEmployee()
@@ -55,7 +55,7 @@ namespace LSP_Tests
             act.Should().NotThrow();
         }
 
-        // ─── Guard Clause ────────────────────────────────────
+        // --- Guard Clause ---
 
         [Fact]
         public void Constructor_WithEmptyName_ShouldThrowArgumentException()

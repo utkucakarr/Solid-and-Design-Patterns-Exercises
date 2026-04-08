@@ -21,7 +21,7 @@ namespace AbstractFactory_Implementetion.Application
         // Tüm bileşenler aynı temadan — tutarlı UI garantisi!
         public void RenderUI()
         {
-            Console.WriteLine($"\n─── {_factory.ThemeName} Tema UI Render Ediliyor ───\n");
+            Console.WriteLine($"\n--- {_factory.ThemeName} Tema UI Render Ediliyor ---\n");
             Console.WriteLine(_button.Render());
             Console.WriteLine(_textBox.Render());
             Console.WriteLine(_checkBox.Render());
@@ -29,7 +29,7 @@ namespace AbstractFactory_Implementetion.Application
 
         public void SimulateInteraction()
         {
-            Console.WriteLine($"\n─── {_factory.ThemeName} Tema Etkileşim Simülasyonu ───\n");
+            Console.WriteLine($"\n--- {_factory.ThemeName} Tema Etkileşim Simülasyonu ---\n");
             Console.WriteLine(_button.Click());
             Console.WriteLine(_textBox.GetInput("Utku Çakar"));
             Console.WriteLine(_checkBox.Toggle(true));

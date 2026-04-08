@@ -1,7 +1,7 @@
 ﻿namespace LSP_Violation
 {
 
-    // ❌ Abstract class herkese aynı sözleşmeyi dayatıyor
+    // Abstract class herkese aynı sözleşmeyi dayatıyor
     public abstract class Employee
     {
         public string Name { get; }

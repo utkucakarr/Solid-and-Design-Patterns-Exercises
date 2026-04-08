@@ -8,7 +8,7 @@ namespace ISP_Tests
     {
         private readonly OfficePrinter _officePrinter = new();
 
-        // ─── IPrintable ─────────────────────────────────────
+        // --- IPrintable ---
 
         [Fact]
         public void Print_ShouldReturnSuccess()
@@ -26,7 +26,7 @@ namespace ISP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── IScannable ─────────────────────────────────────
+        // --- IScannable ---
 
         [Fact]
         public void Scan_ShouldReturnSuccess()
@@ -52,7 +52,7 @@ namespace ISP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── ISP Garantisi ──────────────────────────────────
+        // --- ISP Garantisi ---
 
         [Fact]
         public void OfficePrinter_ShouldBeAssignableTo_IPrintable()

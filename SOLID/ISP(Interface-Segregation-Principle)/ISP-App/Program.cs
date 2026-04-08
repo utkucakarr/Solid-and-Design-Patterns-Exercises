@@ -2,37 +2,37 @@
 using ISP_Implementation.Printers;
 using ISP_Implementation.Interfaces;
 
-//Console.WriteLine("╔══════════════════════════════════════╗");
-//Console.WriteLine("║      ISP İHLALİ — CANLI DEMO         ║");
-//Console.WriteLine("╚══════════════════════════════════════╝\n");
+Console.WriteLine("╔══════════════════════════════════════╗");
+Console.WriteLine("║      ISP İHLALİ — CANLI DEMO         ║");
+Console.WriteLine("╚══════════════════════════════════════╝\n");
 
-//var badPrinters = new List<IPrinter>
-//{
-//    new ISP_Violation.AllInOnePrinter(),
-//    new ISP_Violation.OfficePrinter(),
-//    new ISP_Violation.BasicPrinter()
-//};
+var badPrinters = new List<IPrinter>
+{
+    new ISP_Violation.AllInOnePrinter(),
+    new ISP_Violation.OfficePrinter(),
+    new ISP_Violation.BasicPrinter()
+};
 
-//Console.WriteLine("─── Yazdırma İşlemi (Sorunsuz) ───");
-//foreach (var printer in badPrinters)
-//    printer.Print("Rapor.pdf");
+Console.WriteLine("--- Yazdırma İşlemi (Sorunsuz) ---");
+foreach (var printer in badPrinters)
+    printer.Print("Rapor.pdf");
 
-//Console.WriteLine();
-//Console.WriteLine("─── Tarama İşlemi Başlatılıyor ───");
-//Console.WriteLine("Listede BasicPrinter var...\n");
+Console.WriteLine();
+Console.WriteLine("--- Tarama İşlemi Başlatılıyor ---");
+Console.WriteLine("Listede BasicPrinter var...\n");
 
-//try
-//{
-//    foreach (var printer in badPrinters)
-//        printer.Scan("Rapor.pdf");
-//}
-//catch (NotSupportedException ex)
-//{
-//    Console.WriteLine($"\n RUNTIME HATASI: {ex.Message}");
-//    Console.WriteLine("   -> AllInOnePrinter taradı.");
-//    Console.WriteLine("   -> OfficePrinter taradı.");
-//    Console.WriteLine("   -> BasicPrinter'a gelince program ÇÖKTÜ!\n");
-//}
+try
+{
+    foreach (var printer in badPrinters)
+        printer.Scan("Rapor.pdf");
+}
+catch (NotSupportedException ex)
+{
+    Console.WriteLine($"\n RUNTIME HATASI: {ex.Message}");
+    Console.WriteLine("   -> AllInOnePrinter taradı.");
+    Console.WriteLine("   -> OfficePrinter taradı.");
+    Console.WriteLine("   -> BasicPrinter'a gelince program ÇÖKTÜ!\n");
+}
 
 Console.WriteLine("╔══════════════════════════════════════╗");
 Console.WriteLine("║      ISP ÇÖZÜMÜ — DOĞRU YAKLAŞIM     ║");
@@ -80,6 +80,6 @@ foreach (var fax in faxables)
     Console.WriteLine(result.IsSuccess ? $" {result.Message}" : $"  {result.Message}");
 }
 
-Console.WriteLine("\n─── SONUÇ ───");
+Console.WriteLine("\n--- SONUÇ ---");
 Console.WriteLine("  Bad  -> Runtime'da patlıyor. BasicPrinter tarama listesine girebiliyor.");
 Console.WriteLine("  Good -> Compiler koruyor. Her cihaz sadece yapabildiği listeye giriyor.\n");

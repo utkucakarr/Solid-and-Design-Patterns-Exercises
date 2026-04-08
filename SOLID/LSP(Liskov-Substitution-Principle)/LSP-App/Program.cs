@@ -14,12 +14,12 @@ var badEmployees = new List<Employee>
     new LSP_Violation.Intern("Mehmet", 10000)
 };
 
-Console.WriteLine("─── Maaşlar Hesaplanıyor ───");
+Console.WriteLine("--- Maaşlar Hesaplanıyor ---");
 foreach (var emp in badEmployees)
     Console.WriteLine($"  {emp.Name}: {emp.CalculateSalary()} TL");
 
 Console.WriteLine();
-Console.WriteLine("─── Primler Hesaplanıyor ───");
+Console.WriteLine("--- Primler Hesaplanıyor ---");
 Console.WriteLine("    Listede Intern var...\n");
 
 try
@@ -46,7 +46,7 @@ var intern = new LSP_Implementation.Employees.Intern("Mehmet", 10000);
 // Tüm çalışanlar — sadece maaş hesabı, güvenli!
 var allEmployees = new List<IEmployee> { fullTime, contractor, intern };
 
-Console.WriteLine("─── Tüm Maaşlar (Güvenli) ───");
+Console.WriteLine("--- Tüm Maaşlar (Güvenli) ---");
 foreach (var emp in allEmployees)
 {
     var result = PayrollResult.Create(emp.Name, emp.CalculateSalary());
@@ -58,7 +58,7 @@ Console.WriteLine();
 // Sadece prim alabilenler — Intern giremez, compiler engeller!
 var bonusEligibles = new List<IBonusEligible> { fullTime, contractor };
 
-Console.WriteLine("─── Primler (Güvenli) ───");
+Console.WriteLine("--- Primler (Güvenli) ---");
 Console.WriteLine("   Intern listeye giremez — compiler engeller!\n");
 
 foreach (var emp in bonusEligibles)
@@ -74,7 +74,7 @@ Console.WriteLine();
 // Sadece fazla mesai alabilenler
 var overtimeEligibles = new List<IOvertimeEligible> { fullTime };
 
-Console.WriteLine("─── Fazla Mesai (Güvenli) ───");
+Console.WriteLine("--- Fazla Mesai (Güvenli) ---");
 Console.WriteLine("   Sadece tam zamanlı çalışanlar bu listeye girebilir!\n");
 
 foreach (var emp in overtimeEligibles)
@@ -85,6 +85,6 @@ foreach (var emp in overtimeEligibles)
                       $"Fazla Mesai: {result.Overtime} TL | Toplam: {result.TotalPayment} TL");
 }
 
-Console.WriteLine("\n─── SONUÇ ───");
+Console.WriteLine("\n--- SONUÇ ---");
 Console.WriteLine("   Bad  -> Runtime'da patlıyor. Intern prim listesine girebiliyor.");
 Console.WriteLine("   Good -> Compiler koruyor. Her çalışan yalnızca hakkı olan listeye giriyor.\n");

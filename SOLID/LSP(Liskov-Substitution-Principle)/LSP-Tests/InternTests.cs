@@ -8,7 +8,7 @@ namespace LSP_Tests
     {
         private readonly Intern _intern = new("Mehmet", 10000);
 
-        // ─── IEmployee ──────────────────────────────────────
+        // --- IEmployee ---
 
         [Fact]
         public void CalculateSalary_ShouldReturnBaseSalary()
@@ -16,7 +16,7 @@ namespace LSP_Tests
             _intern.CalculateSalary().Should().Be(10000);
         }
 
-        // ─── LSP Garantisi ──────────────────────────────────
+        // --- LSP Garantisi ---
 
         [Fact]
         public void Intern_ShouldBeAssignableTo_IEmployee()
@@ -49,7 +49,7 @@ namespace LSP_Tests
             act.Should().NotThrow();
         }
 
-        // ─── Guard Clause ────────────────────────────────────
+        // --- Guard Clause ---
 
         [Fact]
         public void Constructor_WithEmptyName_ShouldThrowArgumentException()

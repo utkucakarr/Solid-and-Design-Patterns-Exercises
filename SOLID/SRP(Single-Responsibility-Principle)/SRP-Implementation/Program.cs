@@ -18,7 +18,7 @@ var order = new Order
     }
 };
 
-Console.WriteLine("─── Her Sınıf Tek Bir İş Yapıyor ───");
+Console.WriteLine("--- Her Sınıf Tek Bir İş Yapıyor ---");
 Console.WriteLine($"Toplam: {order.CalculateTotal()} TL\n");
 
 var service = new OrderService(
@@ -29,6 +29,6 @@ var service = new OrderService(
 
 service.ProcessOrder(order);
 
-Console.WriteLine("\n─── SONUÇ ───");
-Console.WriteLine("  ❌ Bad  → 1 sınıf, 4 sorumluluk. Bir şey değişince her yere dokunuyorsun.");
-Console.WriteLine("  ✅ Good → Her sınıfın tek işi var. Değişim izole kalıyor.\n");
+Console.WriteLine("\n--- SONUÇ ---");
+Console.WriteLine("  Bad -> 1 sınıf, 4 sorumluluk. Bir şey değişince her yere dokunuyorsun.");
+Console.WriteLine("  Good -> Her sınıfın tek işi var. Değişim izole kalıyor.\n");

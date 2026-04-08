@@ -7,7 +7,7 @@ Console.WriteLine("╚═══════════════════�
 
 var badForest = new ForestBad();
 
-Console.WriteLine("─── 9 Ağaç Eklenliyor (Her biri ayrı texture ve color verisi) ───\n");
+Console.WriteLine("--- 9 Ağaç Eklenliyor (Her biri ayrı texture ve color verisi) ---\n");
 
 badForest.PlantTree("Oak", "oak_texture", "Koyu Yeşiş", 10, 20, 5);
 badForest.PlantTree("Oak", "oak_texture", "Koyu Yeşil", 30, 40, 7);
@@ -32,7 +32,7 @@ Console.WriteLine("╚═══════════════════�
 
 var forest = new Forest();
 
-Console.WriteLine("─── 9 Ağaç Ekleniyor (TreeType'lar paylaşılıyor) ───\n");
+Console.WriteLine("--- 9 Ağaç Ekleniyor (TreeType'lar paylaşılıyor) ---\n");
 
 forest.PlantTree("Oak", "Koyu Yeşil", "oak_texture", 10, 20, 5);
 forest.PlantTree("Oak", "Koyu Yeşil", "oak_texture", 30, 40, 7);

@@ -2,7 +2,7 @@
 {
     public class Logger
     {
-        // ❌ Her servis kendi Logger'ını oluşturuyor
+        // Her servis kendi Logger'ını oluşturuyor
         private readonly string _logFilePath;
         public Guid InstanceId { get; } = Guid.NewGuid();
 

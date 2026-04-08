@@ -7,13 +7,13 @@ namespace DIP_Implementation.Services
     {
         private readonly IEnumerable<INotificationService> _services;
 
-        // ✅ Constructor injection — bağımlılıklar dışarıdan geliyor
+        // Constructor injection — bağımlılıklar dışarıdan geliyor
         public NotificationManager(IEnumerable<INotificationService> services)
         {
             _services = services ?? throw new ArgumentNullException(nameof(services));
         }
 
-        // ✅ Yeni kanal eklemek için bu sınıfa dokunmak gerekmez!
+        // Yeni kanal eklemek için bu sınıfa dokunmak gerekmez!
         public IEnumerable<NotificationResult> SendAll(string message)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(message, nameof(message));

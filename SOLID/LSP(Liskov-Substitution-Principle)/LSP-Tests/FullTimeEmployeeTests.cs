@@ -8,7 +8,7 @@ namespace LSP_Tests
     {
         private readonly FullTimeEmployee _fullTimeEmployee = new("Ahmet", 30000);
 
-        // ─── IEmployee ──────────────────────────────────────
+        // --- IEmployee ---
 
         [Fact]
         public void CalculateSalary_ShouldReturnBaseSalary()
@@ -16,7 +16,7 @@ namespace LSP_Tests
             _fullTimeEmployee.CalculateSalary().Should().Be(30000);
         }
 
-        // ─── IBonusEligible ─────────────────────────────────
+        // --- IBonusEligible ---
 
         [Fact]
         public void CalculateBonus_ShouldReturnTwentyPercent()
@@ -24,7 +24,7 @@ namespace LSP_Tests
             _fullTimeEmployee.CalculateBonus().Should().Be(6000); // 30000 * 0.20
         }
 
-        // ─── IOvertimeEligible ──────────────────────────────
+        // --- IOvertimeEligible ---
 
         [Fact]
         public void CalculateOvertime_ShouldReturnTenPercent()
@@ -32,7 +32,7 @@ namespace LSP_Tests
             _fullTimeEmployee.CalculateOvertime().Should().Be(3000); // 30000 * 0.10
         }
 
-        // ─── LSP Garantisi ──────────────────────────────────
+        // --- LSP Garantisi ---
 
         [Fact]
         public void FullTimeEmployee_ShouldBeAssignableTo_IEmployee()

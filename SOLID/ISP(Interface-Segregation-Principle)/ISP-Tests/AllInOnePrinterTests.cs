@@ -8,7 +8,7 @@ namespace ISP_Tests
     {
         private readonly AllInOnePrinter _allInOnePrinter = new();
 
-        // ─── IPrintable ──
+        // --- IPrintable ---
 
         [Fact]
         public void Print_ShouldReturnSuccess()
@@ -26,7 +26,7 @@ namespace ISP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── IScannable ──
+        // --- IScannable ---
 
         [Fact]
         public void Scan_ShouldReturnSuccess()
@@ -44,7 +44,7 @@ namespace ISP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── IFaxable ──
+        // --- IFaxable ---
 
         [Fact]
         public void Fax_ShouldReturnSuccess()
@@ -70,7 +70,7 @@ namespace ISP_Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // ─── ISP Garantisi ──
+        // --- ISP Garantisi ---
 
         [Fact]
         public void AllInOne_ShouldBeAssignableTo_IPrintable()

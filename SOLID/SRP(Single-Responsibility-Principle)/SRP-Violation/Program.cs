@@ -16,16 +16,16 @@ var badOrder = new Order
     }
 };
 
-Console.WriteLine("─── Tek Sınıf Her Şeyi Yapıyor ───");
+Console.WriteLine("--- Tek Sınıf Her Şeyi Yapıyor ---");
 Console.WriteLine($"Toplam: {badOrder.CalculateTotal()} TL");
 badOrder.SaveToDatabase();
 badOrder.SendConfirmationEmail();
 badOrder.LogOrder();
 
 Console.WriteLine();
-Console.WriteLine("⚠️  Order sınıfının değişmesi için 4 farklı sebep var:");
-Console.WriteLine("   → Veritabanı değişirse");
-Console.WriteLine("   → E-posta servisi değişirse");
-Console.WriteLine("   → Log formatı değişirse");
-Console.WriteLine("   → Hesaplama mantığı değişirse");
+Console.WriteLine("  Order sınıfının değişmesi için 4 farklı sebep var:");
+Console.WriteLine("  -> Veritabanı değişirse");
+Console.WriteLine("  -> E-posta servisi değişirse");
+Console.WriteLine("  -> Log formatı değişirse");
+Console.WriteLine("  -> Hesaplama mantığı değişirse");
 Console.WriteLine("   Hepsinde bu sınıfa dokunmak zorunda kalırız!\n");
