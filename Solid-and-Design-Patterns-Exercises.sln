@@ -127,6 +127,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight-Tests", "DesignPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flyweight-Violation", "DesignPatterns\Structural\Flyweight\Flyweight-Violation\Flyweight-Violation.csproj", "{6A70A757-0124-6ABC-F9DC-66A5EAA32760}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Composite", "Composite", "{52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite-İmplementation", "DesignPatterns\Structural\Composite\Composite-İmplementation\Composite-İmplementation.csproj", "{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite-Violation", "DesignPatterns\Structural\Composite\Composite-Violation\Composite-Violation.csproj", "{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite-App", "DesignPatterns\Structural\Composite\Composite-App\Composite-App.csproj", "{94937B34-525F-4FCC-91B6-45B85FF5766C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite-Tests", "DesignPatterns\Structural\Composite\Composite-Tests\Composite-Tests.csproj", "{193F14DA-3FF4-43CC-BABB-07CAFF9152B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -317,6 +327,22 @@ Global
 		{6A70A757-0124-6ABC-F9DC-66A5EAA32760}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A70A757-0124-6ABC-F9DC-66A5EAA32760}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A70A757-0124-6ABC-F9DC-66A5EAA32760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94937B34-525F-4FCC-91B6-45B85FF5766C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94937B34-525F-4FCC-91B6-45B85FF5766C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94937B34-525F-4FCC-91B6-45B85FF5766C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94937B34-525F-4FCC-91B6-45B85FF5766C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{193F14DA-3FF4-43CC-BABB-07CAFF9152B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193F14DA-3FF4-43CC-BABB-07CAFF9152B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193F14DA-3FF4-43CC-BABB-07CAFF9152B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193F14DA-3FF4-43CC-BABB-07CAFF9152B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -382,6 +408,11 @@ Global
 		{4D85F2AF-20BA-387B-B46A-985F9040ABA9} = {7070966B-F42C-4393-B722-2DC2F4D8DC15}
 		{69B7A14B-2A97-3E12-EA58-49759E6936D6} = {7070966B-F42C-4393-B722-2DC2F4D8DC15}
 		{6A70A757-0124-6ABC-F9DC-66A5EAA32760} = {7070966B-F42C-4393-B722-2DC2F4D8DC15}
+		{52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35} = {93B12365-B601-455D-8BDC-5781D2D79E99}
+		{F2147FA6-2281-44E8-B5DF-6DAA096EFB8C} = {52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35}
+		{3F38B1F3-0F4C-420E-A3AD-D9239FEC43DE} = {52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35}
+		{94937B34-525F-4FCC-91B6-45B85FF5766C} = {52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35}
+		{193F14DA-3FF4-43CC-BABB-07CAFF9152B8} = {52F6FCB2-EDC7-4824-9DB9-1EE34B23BB35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8744328-06DD-40C9-826A-2F1CEDF0732A}
