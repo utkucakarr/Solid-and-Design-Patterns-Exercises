@@ -187,12 +187,12 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
-| 1 | Flyweight | Creational | ✅ Tamamlandı |
-| 2 | Adapter | Creational | ✅ Tamamlandı |
-| 3 | Composite | Creational | 🔜 Yakında |
-| 4 | Facade | Creational | 🔜 Yakında |
-| 5 | Proxy | Creational | 🔜 Yakında |
+| 1 | Flyweight | Structural | ✅ Tamamlandı |
+| 2 | Adapter | Structural | ✅ Tamamlandı |
+| 3 | Composite | Structural | 🔜 Yakında |
+| 4 | Facade | Structural | 🔜 Yakında |
+| 5 | Proxy | Structural | 🔜 Yakında |
 | 6 | Decorator | Structural | 🔜 Yakında |
-| 7 | Bridge | Behavioral | 🔜 Yakında |
+| 7 | Bridge | Structural | 🔜 Yakında |
 
 ---
