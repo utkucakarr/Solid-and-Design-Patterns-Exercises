@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Facade_App</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Creational\FactoryMethod\FactoryMethod-Implementation\FactoryMethod-Implementation.csproj" />
+    <ProjectReference Include="..\Facade-Implementation\Facade-Implementation.csproj" />
+    <ProjectReference Include="..\Facade-Violation\Facade-Violation.csproj" />
+  </ItemGroup>
+
+</Project>
