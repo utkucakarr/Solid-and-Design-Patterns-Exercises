@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Proxy_App</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Creational\Prototype\Prototype-Violation\Prototype-Violation.csproj" />
+    <ProjectReference Include="..\Proxy-Implementation\Proxy-Implementation.csproj" />
+    <ProjectReference Include="..\Proxy-Violation\Proxy-Violation.csproj" />
+  </ItemGroup>
+
+</Project>
