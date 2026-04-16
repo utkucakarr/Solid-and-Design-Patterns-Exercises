@@ -1,4 +1,4 @@
-# Design Patterns #10 — Decorator Pattern
+# Design Patterns #11 — Decorator Pattern
 
 > *"Bir nesneye, aynı sınıftaki diğer nesneleri etkilemeksizin, dinamik olarak yeni sorumluluklar ekleyen yapısal bir tasarım desenidir."*
 > — Gang of Four (GoF)
@@ -21,6 +21,11 @@ Decorator Pattern, bir nesnenin davranışını değiştirmeden üzerine yeni so
 - .NET Stream sınıfları — `GZipStream(CryptoStream(FileStream(...)))`
 - ASP.NET Core Middleware — her middleware zincirde bir decorator
 - HTTP Client handler'ları — retry, loglama, auth handler'ları
+
+---
+
+## Senaryo
+E-posta Gönderim Servisi. Temel e-posta gönderimi üzerine sıkıştırma, şifreleme ve loglama katmanları eklenmesi gerekiyor. Her katman isteğe bağlı ve zincirlenebilir olmalı — client hangi katmanları istediğini kendisi seçebilmeli.
 
 ---
 

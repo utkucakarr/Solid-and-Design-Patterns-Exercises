@@ -1,4 +1,4 @@
-# Design Patterns #9 — Proxy Pattern
+# Design Patterns #10 — Proxy Pattern
 
 > *"Başka bir nesneye erişimi kontrol etmek için o nesnenin yerini tutan veya ona bir aracı görevi gören nesne."*
 > — Gang of Four (GoF)
@@ -27,6 +27,11 @@ Proxy Pattern, bir nesneye erişimi kontrol etmek amacıyla o nesneyle aynı int
 - ORM Lazy Loading — ilişkili veri gerçekten kullanılana kadar yüklenmiyor
 - CDN — gerçek sunucu yerine edge server önce yanıt veriyor
 - Spring AOP / .NET Interceptors — cross-cutting concerns
+
+---
+
+## Senaryo
+Hava Durumu API Gateway. Dış bir hava durumu servisimiz var. Her istek öncesinde API key doğrulaması ve rate limiting (dakikada max 5 istek) kontrolü yapılması gerekiyor. Proxy olmadan bu kontroller her client'ta tekrarlanıyor.
 
 ---
 

@@ -1,4 +1,4 @@
-# Design Patterns #8 — Facade Pattern
+# Design Patterns #9 — Facade Pattern
 
 > *"Bir alt sistemdeki arayüzler kümesine birleşik bir arayüz sağlar. Facade, alt sistemi kullanmayı kolaylaştıran üst düzey bir arayüz tanımlar."*
 > — Gang of Four (GoF)
@@ -24,6 +24,10 @@ Facade Pattern, karmaşık bir alt sistem bütününe basitleştirilmiş tek bir
 
 ---
 
+## Senaryo
+Banka Para Transfer Sistemi. Müşteri transfer başlattığında 5 farklı alt sistem devreye giriyor: bakiye kontrol, fraud kontrolü, transfer işlemi, bildirim ve audit log. Facade olmadan client tüm bu adımları bilmek ve sıralamak zorunda kalıyor.
+
+---
 
 ## Kötü Kullanım — Facade İhlali
 

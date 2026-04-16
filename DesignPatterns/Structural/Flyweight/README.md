@@ -24,6 +24,18 @@ Flyweight Pattern, çok sayıda benzer nesnenin bellek kullanımını azaltmak i
 
 ---
 
+## Senaryo
+Bir oyunda devasa bir orman render ediliyor:
+
+1.000.000 ağaç var
+Her ağacın türü, dokusu ve rengi var — bunlar paylaşılabilir (intrinsic)
+Her ağacın konumu ve boyutu var — bunlar her nesneye özel (extrinsic)
+
+Eğer 1 milyon ağacın hepsini ayrı nesne olarak saklarsak → bellek çöker!
+Flyweight ile → aynı türdeki ağaçlar tek bir nesneyi paylaşır → bellek %99 azalır!
+
+---
+
 ## Kötü Kullanım — Flyweight İhlali
 
 Her ağaç kendi texture ve color verisini tutuyor:
