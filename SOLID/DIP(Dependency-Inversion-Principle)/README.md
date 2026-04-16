@@ -127,6 +127,4 @@ Testler **xUnit**, **Moq** ve **FluentAssertions** ile yazılmıştır.
 - **DIP garantisi:** Herhangi bir `INotificationService` implementasyonuyla çalışıyor.
 - **DIP garantisi:** Farklı sayıda servisle `NotificationManager` değişmiyor.
 
-```
-
 
