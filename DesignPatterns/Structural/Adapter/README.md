@@ -23,6 +23,16 @@ Adapter Pattern, birbirleriyle uyumsuz interface'lere sahip sınıfların birlik
 - Harita servisleri — Google Maps, OpenStreetMap adaptasyonu
 
 ---
+## Senaryo
+Sistemimizde IPaymentProcessor interface'i var. Üç farklı ödeme sağlayıcısını entegre etmemiz gerekiyor:
+
+- PayPal → MakePayment() metoduna sahip — farklı imza!
+- Stripe → Charge() metoduna sahip — farklı imza!
+- Iyzico → OdemeYap() metoduna sahip — farklı imza!
+
+Üçüncü parti kütüphanelerin kodunu değiştiremeyiz. Adapter ile kendi interface'imize uyumlu hale getireceğiz.
+
+---
 
 ## Kötü Kullanım — Adapter İhlali
 
