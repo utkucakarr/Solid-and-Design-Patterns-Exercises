@@ -17,6 +17,14 @@ Abstract Factory Pattern, birbiriyle **uyumlu nesneler ailesini** tek bir çatı
 
 ---
 
+## Senaryo
+Bir masaüstü uygulamasında 2 farklı tema var:
+
+LightTheme → açık renkli Button, TextBox, CheckBox
+DarkTheme → koyu renkli Button, TextBox, CheckBox
+
+Her temada Button, TextBox ve CheckBox birbiriyle uyumlu olmalı — Light Button ile Dark TextBox karıştırılamaz!
+
 ---
 
 ## Kötü Kullanım — Abstract Factory İhlali
@@ -124,10 +132,10 @@ var darkApp  = new UIApplication(new DarkUIFactory());
 
 | | Abstract Factory İhlali | Abstract Factory Uyumlu |
 |---|---|---|
-| Tema tutarlılığı | ❌ Karıştırılabilir | ✅ Factory garantisi |
+| Tema tutarlılığı | Karıştırılabilir | Factory garantisi |
 | Yeni tema eklemek | Her bileşende if-else | Yeni factory sınıfı ekle |
 | Client bilgisi | Somut sınıfları biliyor | Sadece interface'i biliyor |
-| OCP | ❌ İhlal | ✅ Korunuyor |
+| OCP | İhlal | Korunuyor |
 | Test edilebilirlik | Zor | Mock factory ile kolay |
 
 ---
