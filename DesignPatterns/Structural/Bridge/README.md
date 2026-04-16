@@ -176,7 +176,7 @@ Her rapor tipi **izole** test edildi — renderer mock'landı. `BridgeIndependen
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
