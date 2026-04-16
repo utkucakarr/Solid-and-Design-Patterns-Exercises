@@ -23,6 +23,17 @@ Factory Method Pattern, nesne oluşturma sorumluluğunu client'tan alıp factory
 
 ---
 
+## Senaryo
+Bir uygulamada 3 farklı bildirim kanalı var:
+
+EmailNotification → e-posta gönderir
+SmsNotification → SMS gönderir
+PushNotification → mobil bildirim gönderir
+
+Hangi kanalın kullanılacağına çalışma zamanında karar veriliyor.
+
+---
+
 ## Kötü Kullanım — Factory Method İhlali
 
 `NotificationServiceBad` içinde if-else zinciri ile nesne oluşturuluyor:
@@ -138,7 +149,7 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 
 ```
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
