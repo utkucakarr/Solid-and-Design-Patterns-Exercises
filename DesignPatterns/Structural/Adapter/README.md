@@ -193,7 +193,7 @@ Testler **xUnit** ve **FluentAssertions** ile yazılmıştır.
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
