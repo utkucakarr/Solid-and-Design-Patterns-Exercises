@@ -5,7 +5,7 @@
 
 ---
 
-##Singleton Pattern Nedir?
+## Singleton Pattern Nedir?
 
 Singleton Pattern, bir sınıfın uygulama boyunca **yalnızca tek bir instance** oluşturulmasını garanti eder. Bu instance'a her yerden aynı erişim noktası üzerinden ulaşılır.
 
@@ -22,6 +22,16 @@ Singleton Pattern, bir sınıfın uygulama boyunca **yalnızca tek bir instance*
 - Cache yöneticisi — bellekte tek bir cache nesnesi
 
 ---
+
+## Senaryo
+Bir uygulamada tüm katmanlar log üretiyor:
+
+OrderService → sipariş logları
+UserService → kullanıcı logları
+PaymentService → ödeme logları
+
+Eğer her servis kendi Logger'ını oluştursaydı → aynı anda birden fazla servis aynı dosyaya yazmaya çalışır → dosya çakışması, veri kaybı, tutarsız loglar.
+Singleton ile → tüm uygulama tek bir Logger kullanır, loglar sıralı ve tutarlı olur.
 
 ---
 
@@ -180,7 +190,7 @@ Singleton güçlü bir pattern ama her yerde kullanmak doğru değil:
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
