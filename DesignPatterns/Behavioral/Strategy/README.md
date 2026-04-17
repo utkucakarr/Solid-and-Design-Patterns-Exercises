@@ -30,6 +30,15 @@
 
 ---
 
+## Senaryo
+
+Bir e-ticaret platformunda kargo fiyatlandırma modülü geliştiriyoruz.
+Platform standart, express, ücretsiz ve premium üye kargosu olmak üzere
+dört farklı fiyatlandırma algoritması sunuyor. Flash sale dönemlerinde
+strateji runtime'da değişebiliyor.
+
+---
+
 ## Kötü Kullanım
 
 ```csharp
