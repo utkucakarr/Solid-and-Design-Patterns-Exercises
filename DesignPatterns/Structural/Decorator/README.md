@@ -75,7 +75,7 @@ public abstract class BaseEmailDecorator : IEmailService
                ?? throw new ArgumentNullException(nameof(innerService));
 
     public virtual EmailResult Send(EmailMessage message)
-        => _innerService.Send(message); // ✅ Default: inner'a ilet
+        => _innerService.Send(message); // Default: inner'a ilet
 }
 
 // Her decorator tek sorumluluk ekliyor
@@ -83,8 +83,8 @@ public class CompressionEmailDecorator : BaseEmailDecorator
 {
     public override EmailResult Send(EmailMessage message)
     {
-        message.Body = Compress(message.Body); // ✅ Önce sıkıştır
-        return _innerService.Send(message);    // ✅ Sonra inner'a ilet
+        message.Body = Compress(message.Body); // Önce sıkıştır
+        return _innerService.Send(message);    // Sonra inner'a ilet
     }
 }
 
@@ -170,7 +170,7 @@ Her decorator **izole** test edildi — inner servis mock'landı. Ayrıca `Decor
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|

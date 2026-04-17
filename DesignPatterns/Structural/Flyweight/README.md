@@ -119,7 +119,7 @@ Flyweight'in temeli bu ayrımdır:
 |---|---|---|
 | Bellek kullanımı | O(n) — ağaç sayısıyla orantılı | O(k) — benzersiz tip sayısıyla |
 | 1M ağaç belleği | 1M texture kopyası | Sadece 3 TreeType nesnesi |
-| Paylaşım | ❌ Her nesne kendi verisini taşır | ✅ Ortak veriler paylaşılır |
+| Paylaşım | Her nesne kendi verisini taşır | Ortak veriler paylaşılır |
 | Performans | Düşük — bellek baskısı | Yüksek — az bellek kullanımı |
 
 ---
@@ -145,7 +145,7 @@ Flyweight'in temeli bu ayrımdır:
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|

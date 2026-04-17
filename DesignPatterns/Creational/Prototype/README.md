@@ -24,6 +24,15 @@ Prototype Pattern, mevcut bir nesneyi **kopyalayarak** yeni nesneler oluşturur.
 
 ---
 
+## Senaryo
+Bir uygulamada 3 farklı belge tipi var:
+
+ReportDocument → başlık, içerik, tablo verileri olan rapor
+InvoiceDocument → müşteri bilgileri, kalemler olan fatura
+ContractDocument → taraflar, maddeler olan sözleşme
+
+Bu belgeler şirket içinde şablon olarak kullanılıyor. Her yeni belge mevcut şablondan kopyalanarak oluşturuluyor — sıfırdan oluşturmak maliyetli!
+
 ---
 
 ## Kötü Kullanım — Prototype İhlali

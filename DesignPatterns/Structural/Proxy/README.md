@@ -83,7 +83,7 @@ public class WeatherMobileApp_Bad
 
 ---
 
-## ✅ Doğru Kullanım — Proxy Pattern
+## Doğru Kullanım — Proxy Pattern
 
 ### Cross-Cutting Concerns Katmanı
 
@@ -256,7 +256,7 @@ Proxy'nin en kritik davranışı şudur: geçersiz API key gelirse gerçek servi
 
 ---
 
-## 📚 Design Patterns Serisi
+## Design Patterns Serisi
 
 | # | Pattern | Kategori | Durum |
 |---|---|---|---|
