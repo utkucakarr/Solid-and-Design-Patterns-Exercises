@@ -1,4 +1,4 @@
-# Strategy Pattern — Kargo Fiyatlandırma
+# Strategy Pattern 
 
 > *"Bir algoritma ailesi tanımlayın, her birini kapsülleyin (sarmalayın) ve birbirlerinin yerine kullanılabilir hale getirin. Strateji deseni, algoritmaların onları kullanan istemcilerden bağımsız olarak değişebilmesine olanak tanır."*
 > — **Gang of Four**
