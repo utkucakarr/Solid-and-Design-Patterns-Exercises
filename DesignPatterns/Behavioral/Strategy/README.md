@@ -1,4 +1,4 @@
-# Strategy Pattern — Kargo Fiyatlandırma
+# Strategy Pattern 
 
 > *"Bir algoritma ailesi tanımlayın, her birini kapsülleyin (sarmalayın) ve birbirlerinin yerine kullanılabilir hale getirin. Strateji deseni, algoritmaların onları kullanan istemcilerden bağımsız olarak değişebilmesine olanak tanır."*
 > — **Gang of Four**
@@ -27,6 +27,15 @@
 | Sıkıştırma | ZIP, RAR, GZIP algoritmaları |
 | Sıralama | QuickSort, MergeSort, BubbleSort |
 | Oyun AI | Saldırgan, savunmacı, pasif davranış |
+
+---
+
+## Senaryo
+
+Bir e-ticaret platformunda kargo fiyatlandırma modülü geliştiriyoruz.
+Platform standart, express, ücretsiz ve premium üye kargosu olmak üzere
+dört farklı fiyatlandırma algoritması sunuyor. Flash sale dönemlerinde
+strateji runtime'da değişebiliyor.
 
 ---
 
