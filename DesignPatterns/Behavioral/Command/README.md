@@ -29,6 +29,18 @@
 
 ---
 
+## Senaryo
+## Akıllı Ev Otomasyon Sistemi
+
+Kullanıcı ışıkları, termostatı ve güvenlik kamerasını kontrol ediyor. Her komut kaydediliyor, geri alınabiliyor (undo), makrolar oluşturulabiliyor ("İyi geceler" diyince tüm ışıklar söner, alarm kurulur).
+Neden iyi?
+- Undo/Redo Command'in en güçlü özelliğini doğal gösteriyor
+- Macro Command (composite) eklenebilir
+- Queue/Scheduler'a takılabilir
+- Gerçek IoT projelerinde tam bu şekilde kullanılıyor
+
+---
+
 ## Kötü Kullanım
 
 ```csharp
