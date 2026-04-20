@@ -199,6 +199,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command-Implementation", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command-Tests", "DesignPatterns\Behavioral\Command\Command-Tests\Command-Tests.csproj", "{D4590A57-2C69-40AC-8874-C1402566C222}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Iterator", "Iterator", "{9566A1E6-20F3-4B57-ABC9-82780EBD5654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator-App", "DesignPatterns\Behavioral\Iterator\Iterator-App\Iterator-App.csproj", "{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator-Implementation", "DesignPatterns\Behavioral\Iterator\Iterator-Implementation\Iterator-Implementation.csproj", "{0C1F176D-3212-4C12-B665-893824DA6B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator-Violation", "DesignPatterns\Behavioral\Iterator\Iterator-Violation\Iterator-Violation.csproj", "{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator-Tests", "DesignPatterns\Behavioral\Iterator\Iterator-Tests\Iterator-Tests.csproj", "{5C7C989C-862A-4355-9962-15FE613A3FB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -501,6 +511,22 @@ Global
 		{D4590A57-2C69-40AC-8874-C1402566C222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4590A57-2C69-40AC-8874-C1402566C222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4590A57-2C69-40AC-8874-C1402566C222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1F176D-3212-4C12-B665-893824DA6B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1F176D-3212-4C12-B665-893824DA6B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1F176D-3212-4C12-B665-893824DA6B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1F176D-3212-4C12-B665-893824DA6B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7C989C-862A-4355-9962-15FE613A3FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7C989C-862A-4355-9962-15FE613A3FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7C989C-862A-4355-9962-15FE613A3FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7C989C-862A-4355-9962-15FE613A3FB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -602,6 +628,11 @@ Global
 		{B0FADDEA-31E0-4081-8ECF-D5927BE0A725} = {9C020F3F-7E65-422F-AA41-33DD4E3EA5E5}
 		{31F43995-9355-4A59-BD26-C1B86560459D} = {9C020F3F-7E65-422F-AA41-33DD4E3EA5E5}
 		{D4590A57-2C69-40AC-8874-C1402566C222} = {9C020F3F-7E65-422F-AA41-33DD4E3EA5E5}
+		{9566A1E6-20F3-4B57-ABC9-82780EBD5654} = {91FF01CE-86CD-4EF4-89D5-208A181436A2}
+		{EA8BFAEB-8609-485F-9ACF-CA8F8F397DC1} = {9566A1E6-20F3-4B57-ABC9-82780EBD5654}
+		{0C1F176D-3212-4C12-B665-893824DA6B8B} = {9566A1E6-20F3-4B57-ABC9-82780EBD5654}
+		{A1D2589E-AEAD-4A68-B0A2-4294DCE08BDC} = {9566A1E6-20F3-4B57-ABC9-82780EBD5654}
+		{5C7C989C-862A-4355-9962-15FE613A3FB3} = {9566A1E6-20F3-4B57-ABC9-82780EBD5654}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8744328-06DD-40C9-826A-2F1CEDF0732A}
