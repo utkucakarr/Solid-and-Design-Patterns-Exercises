@@ -30,6 +30,14 @@
 
 ---
 
+## Senaryo
+
+> Bir doküman editörü geliştiriyorsunuz. Kullanıcı başlık, içerik ve etiket değişikliklerini Undo ile geri alabilmeli, Redo ile ileri götürebilmeli. Bu sistemi encapsulation'ı bozmadan nasıl tasarlarsın?
+
+---
+
+---
+
 ## Kötü Kullanım (Violation)
 
 ```csharp
