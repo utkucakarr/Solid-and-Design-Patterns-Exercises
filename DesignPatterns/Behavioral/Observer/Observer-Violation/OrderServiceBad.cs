@@ -6,7 +6,7 @@
 
         private readonly List<Order> _orders = new ();
 
-        public void CancelOderStatus(string orderId, OrderStatus newStatus)
+        public void ChangeOderStatus(string orderId, OrderStatus newStatus)
         {
             var order = _orders.FirstOrDefault(o => o.OrderId == orderId);
 

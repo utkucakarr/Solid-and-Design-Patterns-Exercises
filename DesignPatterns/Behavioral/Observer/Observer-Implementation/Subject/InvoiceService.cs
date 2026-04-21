@@ -10,8 +10,8 @@ namespace Observer_Implementation.Subject
             ArgumentException.ThrowIfNullOrWhiteSpace(orderId, nameof(orderId));
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(totalPrice, nameof(totalPrice));
 
-            Console.WriteLine($" [INVOICE] #{orderId} için " +
-                $"{totalPrice:C} tutarında fatura oluşturuldu.");
+            Console.WriteLine($" [INVOICE] {orderId} için " +
+                $"{totalPrice} tutarında fatura oluşturuldu.");
         }
     }
 }

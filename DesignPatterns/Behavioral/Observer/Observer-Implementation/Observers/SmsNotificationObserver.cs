@@ -27,13 +27,13 @@ namespace Observer_Implementation.Observers
             var message = order.Status switch
             {
                 OrderStatus.Confirmed =>
-                    $"Siparişiniz #{order.OrderId} onaylandı. Tutar: {order.TotalPrice:C}",
+                    $"Siparişiniz {order.OrderId} onaylandı. Tutar: {order.TotalPrice}",
                 OrderStatus.Shipped =>
-                    $"Siparişiniz #{order.OrderId} kargoya verildi.",
+                    $"Siparişiniz {order.OrderId} kargoya verildi.",
                 OrderStatus.Delivered =>
-                    $"Siparişiniz #{order.OrderId} teslim edildi. Teşekkürler!",
+                    $"Siparişiniz {order.OrderId} teslim edildi. Teşekkürler!",
                 OrderStatus.Cancelled =>
-                    $"Siparişiniz #{order.OrderId} iptal edildi.",
+                    $"Siparişiniz {order.OrderId} iptal edildi.",
                 _ => string.Empty
             };
 

@@ -19,10 +19,10 @@ namespace Observer_Implementation.Observers
 
             var subject = order.Status switch
             {
-                OrderStatus.Confirmed => $"Siparişiniz #{order.OrderId} Onaylandı",
-                OrderStatus.Shipped => $"Siparişiniz #{order.OrderId} Kargoya Verildi",
-                OrderStatus.Delivered => $"Siparişiniz #{order.OrderId} Teslim Edildi",
-                OrderStatus.Cancelled => $"Siparişiniz #{order.OrderId} İptal Edildi",
+                OrderStatus.Confirmed => $"Siparişiniz {order.OrderId} Onaylandı",
+                OrderStatus.Shipped => $"Siparişiniz {order.OrderId} Kargoya Verildi",
+                OrderStatus.Delivered => $"Siparişiniz {order.OrderId} Teslim Edildi",
+                OrderStatus.Cancelled => $"Siparişiniz {order.OrderId} İptal Edildi",
                 _ => $"Siparişiniz #{order.OrderId} Güncellendi"
             };
 
@@ -30,7 +30,7 @@ namespace Observer_Implementation.Observers
             {
                 OrderStatus.Confirmed =>
                     $"Merhaba, {order.ProductName} ürününü içeren siparişiniz onaylandı. " +
-                    $"Toplam tutar: {order.TotalPrice:C}",
+                    $"Toplam tutar: {order.TotalPrice}",
                 OrderStatus.Shipped =>
                     $"Merhaba, siparişiniz kargoya verildi. " +
                     $"Takip kodu yakında tarafınıza iletilecek.",
@@ -41,7 +41,7 @@ namespace Observer_Implementation.Observers
                     $"Merhaba, siparişiniz iptal edildi. " +
                     $"İade işleminiz 3-5 iş günü içinde tamamlanacak.",
                 _ =>
-                    $"Siparişinizin durumu '{previousStatus}' → '{order.Status}' olarak güncellendi."
+                    $"Siparişinizin durumu '{previousStatus}' -> '{order.Status}' olarak güncellendi."
             };
 
             // E-posta gönderimi yalnızca bu observer'ın sorumluluğunda

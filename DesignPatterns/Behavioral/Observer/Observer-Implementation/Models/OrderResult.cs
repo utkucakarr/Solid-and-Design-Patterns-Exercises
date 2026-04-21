@@ -21,5 +21,27 @@
             NewStatus = newStatus;
             NotifiedObserverCount = notifiedObserverCount;
         }
+
+        public static OrderResult Success(
+        string orderId,
+        OrderStatus newStatus,
+        int notifiedObserverCount) =>
+        new(
+            isSuccess: true,
+            message: $"Sipariş {orderId} durumu '{newStatus}' olarak güncellendi. " +
+                     $"{notifiedObserverCount} observer bilgilendirildi.",
+            orderId: orderId,
+            newStatus: newStatus,
+            notifiedObserverCount: notifiedObserverCount
+        );
+
+        public static OrderResult Fail(string reason) =>
+            new(
+                isSuccess: false,
+                message: reason,
+                orderId: null,
+                newStatus: null,
+                notifiedObserverCount: 0
+            );
     }
 }

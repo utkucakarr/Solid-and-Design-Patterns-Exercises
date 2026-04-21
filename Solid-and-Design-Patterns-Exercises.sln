@@ -219,6 +219,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod-Violation", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod-Tests", "DesignPatterns\Behavioral\TemplateMethod\TemplateMethod-Tests\TemplateMethod-Tests.csproj", "{DCE3D751-A73D-4EAC-AEDB-B719DEBB421E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Observer", "Observer", "{9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer-App", "DesignPatterns\Behavioral\Observer\Observer-App\Observer-App.csproj", "{1F340751-3802-915D-42D4-BC01AF137BC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer-Implementation", "DesignPatterns\Behavioral\Observer\Observer-Implementation\Observer-Implementation.csproj", "{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer-Tests", "DesignPatterns\Behavioral\Observer\Observer-Tests\Observer-Tests.csproj", "{8E86A9A5-5514-F308-DA93-9473CBD8DA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer-Violation", "DesignPatterns\Behavioral\Observer\Observer-Violation\Observer-Violation.csproj", "{0E67C73A-6988-1170-F9FE-2BD83DCDAC85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -553,6 +563,22 @@ Global
 		{DCE3D751-A73D-4EAC-AEDB-B719DEBB421E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE3D751-A73D-4EAC-AEDB-B719DEBB421E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE3D751-A73D-4EAC-AEDB-B719DEBB421E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F340751-3802-915D-42D4-BC01AF137BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F340751-3802-915D-42D4-BC01AF137BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F340751-3802-915D-42D4-BC01AF137BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F340751-3802-915D-42D4-BC01AF137BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E86A9A5-5514-F308-DA93-9473CBD8DA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E86A9A5-5514-F308-DA93-9473CBD8DA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E86A9A5-5514-F308-DA93-9473CBD8DA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E86A9A5-5514-F308-DA93-9473CBD8DA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E67C73A-6988-1170-F9FE-2BD83DCDAC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E67C73A-6988-1170-F9FE-2BD83DCDAC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E67C73A-6988-1170-F9FE-2BD83DCDAC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E67C73A-6988-1170-F9FE-2BD83DCDAC85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -664,6 +690,11 @@ Global
 		{28F9B892-8401-46BA-ADD7-9D70E8080D22} = {5EFD328B-62F4-49D3-86D5-46AE9BF5BFDA}
 		{DD9DEE95-3218-4BA1-95AC-CD61BEFA3FC6} = {5EFD328B-62F4-49D3-86D5-46AE9BF5BFDA}
 		{DCE3D751-A73D-4EAC-AEDB-B719DEBB421E} = {5EFD328B-62F4-49D3-86D5-46AE9BF5BFDA}
+		{9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C} = {91FF01CE-86CD-4EF4-89D5-208A181436A2}
+		{1F340751-3802-915D-42D4-BC01AF137BC2} = {9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C}
+		{FC2542E4-F4F6-022D-6D27-2C5AC2C4479B} = {9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C}
+		{8E86A9A5-5514-F308-DA93-9473CBD8DA45} = {9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C}
+		{0E67C73A-6988-1170-F9FE-2BD83DCDAC85} = {9526FFCE-8A1D-48D2-9A91-B842EFCC3D8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8744328-06DD-40C9-826A-2F1CEDF0732A}

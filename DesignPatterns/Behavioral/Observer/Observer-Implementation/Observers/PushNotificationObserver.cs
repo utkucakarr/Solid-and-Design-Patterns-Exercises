@@ -25,10 +25,10 @@ namespace Observer_Implementation.Observers
             {
                 OrderStatus.Shipped =>
                     (" Siparişiniz Yola Çıktı!",
-                     $"#{order.OrderId} numaralı siparişiniz kargoya verildi."),
+                     $"{order.OrderId} numaralı siparişiniz kargoya verildi."),
                 OrderStatus.Delivered =>
                     ("Siparişiniz Teslim Edildi!",
-                     $"#{order.OrderId} numaralı siparişiniz kapınıza ulaştı."),
+                     $"{order.OrderId} numaralı siparişiniz kapınıza ulaştı."),
                 _ => (string.Empty, string.Empty)
             };
 
