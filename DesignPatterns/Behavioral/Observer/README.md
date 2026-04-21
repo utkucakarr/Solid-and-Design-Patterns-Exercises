@@ -211,8 +211,8 @@ Observer Pattern'de `IOrderObserver`, `IEmailNotifier`, `ISmsNotifier` gibi aray
 
 ## Design Patterns Serisi
 
-| # | Pattern | Kategori | Domain | Durum |
-|---|---|---|---|---|
+| # | Pattern | Kategori | Durum |
+|---|---|---|---|
 | 1 | Strategy | Behavioral | ✅ Tamamlandı |
 | 2 | Command | Behavioral | ✅ Tamamlandı |
 | 3 | Iterator | Behavioral | ✅ Tamamlandı |
