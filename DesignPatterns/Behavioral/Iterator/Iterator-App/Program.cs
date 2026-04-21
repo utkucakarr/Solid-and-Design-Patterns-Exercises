@@ -1,13 +1,15 @@
 ﻿using Iterator_Violation;
 using Iterator_Implementation.Collections;
 using Iterator_Implementation.Interfaces;
+using Iterator_Implementation.Models;
+using Iterator_Implementation.Player;
 using Microsoft.Extensions.DependencyInjection;
 using Iterator_Implementation.Extensions;
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 Console.WriteLine("╔═══════════════════════════════════════╗");
-Console.WriteLine("║          İHLAL YAKLAŞIMI           ║");
+Console.WriteLine("║          ❌ İHLAL YAKLAŞIMI           ║");
 Console.WriteLine("╚═══════════════════════════════════════╝\n");
 
 var manager = new PlaylistManagerBad();
@@ -37,7 +39,7 @@ Console.WriteLine();
 
 
 Console.WriteLine("╔═══════════════════════════════════════╗");
-Console.WriteLine("║        DOĞRU YAKLAŞIM (DI)         ║");
+Console.WriteLine("║        ✅ DOĞRU YAKLAŞIM (DI)         ║");
 Console.WriteLine("╚═══════════════════════════════════════╝\n");
 
 var services = new ServiceCollection();
