@@ -203,8 +203,8 @@ Template Method pattern'inde test edilen şey concrete sınıfların davranış�
 
 ## Design Patterns Serisi
 
-| # | Pattern | Kategori | Domain | Durum |
-|---|---|---|---|---|
+| # | Pattern | Kategori | Durum |
+|---|---|---|---|
 | 1 | Strategy | Behavioral | ✅ Tamamlandı |
 | 2 | Command | Behavioral | ✅ Tamamlandı |
 | 3 | Iterator | Behavioral | ✅ Tamamlandı |
