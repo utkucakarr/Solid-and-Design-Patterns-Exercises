@@ -1,6 +1,7 @@
 # Visitor Pattern
 
 > *"Represent an operation to be performed on elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates."*
+> *"Bir nesne yapısının elemanları üzerinde gerçekleştirilecek bir işlemi temsil eder. Ziyaretçi (Visitor), üzerinde çalıştığı elemanların sınıflarını değiştirmeden yeni bir işlem tanımlamanıza olanak tanır."*
 > — **Gang of Four**
 
 ---
