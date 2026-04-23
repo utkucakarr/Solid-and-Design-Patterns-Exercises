@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>State_App</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Strategy\Strategy-Implementation\Strategy-Implementation.csproj" />
+    <ProjectReference Include="..\State-Implementation\State-Implementation.csproj" />
+    <ProjectReference Include="..\State-Violation\State-Violation.csproj" />
+  </ItemGroup>
+
+</Project>
