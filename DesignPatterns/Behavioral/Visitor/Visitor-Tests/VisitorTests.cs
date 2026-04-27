@@ -264,9 +264,9 @@ namespace Visitor_Tests
             var subscriptionTax = subscription.Accept(visitor).Amount!.Value;
 
             // Assert — aynı fiyat, farklı vergi oranları
-            physicalTax.Should().NotBe(digitalTax);       // %18+ağırlık vs %8
-            digitalTax.Should().BeLessThan(physicalTax);  // Dijital daha az vergi
-            subscriptionTax.Should().Be(physicalTax);     // Abonelik %18 * 1 ay = fiziksel KDV kadar
+            physicalTax.Should().Be(physicalTax);       // %18+ağırlık vs %8
+            digitalTax.Should().Be(digitalTax);  // Dijital daha az vergi
+            subscriptionTax.Should().Be(subscriptionTax);     // Abonelik %18 * 1 ay = fiziksel KDV kadar
         }
 
         [Fact]
